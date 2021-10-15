@@ -8,7 +8,7 @@ import javax.xml.parsers.SAXParserFactory;
 import org.xml.sax.SAXException;
 
 public class FitxategiDOM {
-	public static void main(String[] args) {
+	public void DOM() {
 
 		try {
 			SAXParserFactory factory = SAXParserFactory.newInstance();
