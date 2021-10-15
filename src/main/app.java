@@ -18,7 +18,7 @@ public class app {
 	static MiHandler miHandler = new MiHandler();
 	static ArrayList<Liburua> Libros = miHandler.obtenerLiburu();
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		Scanner sc = new Scanner(System.in); 
 		int zbk = 0;
 		do {
@@ -31,16 +31,18 @@ public class app {
 			Libros.add(gehituLiburu(sc));
 			break;
 		case 2:
-			System.out.println("XML Fitxategia");
+			System.err.println("XML Fitxategia");
 			fitxeroDOM.FitxategiDOM.DOM(); 
-			System.out.println("TXT Fitxategia");
-			//fitxeroTxt.LeerFichero();
-			System.out.println("DAT Fitxategia");
+			Thread.sleep(2000);
+			System.err.println("TXT Fitxategia");
+			fitxeroTxt.LeerFichero.irakurri(); 
+			Thread.sleep(2000);
+			System.err.println("DAT Fitxategia");
 			//fitxeroDat.Libro();
 			break;
 		}	
 
-	}
+	} 
 
 	public static int zenbakiaDa(String zbks) { 
 		int zbk = 0;
