@@ -1,4 +1,4 @@
-package erronkaTxt;
+package fitxeroTxt;
 
 import java.io.*;
 	public class LeerFichero {

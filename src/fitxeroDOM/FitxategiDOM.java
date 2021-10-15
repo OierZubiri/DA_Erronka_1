@@ -1,3 +1,4 @@
+package fitxeroDOM;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -8,7 +9,8 @@ import javax.xml.parsers.SAXParserFactory;
 import org.xml.sax.SAXException;
 
 public class FitxategiDOM {
-	public void DOM() {
+	
+	public static void DOM() {
 
 		try {
 			SAXParserFactory factory = SAXParserFactory.newInstance();

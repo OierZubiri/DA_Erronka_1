@@ -1,3 +1,4 @@
+package fitxeroDOM;
 public class Liburua {
 private String izenburua;
 private String argitaletxea;
