@@ -1,5 +1,8 @@
 package main;
-public class Liburua {
+
+import java.io.Serializable;
+
+public class Liburua implements Serializable{
 	private String izenburua;
 	private String argitaletxea;
 	private String orrialdeak;

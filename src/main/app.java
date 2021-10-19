@@ -1,4 +1,5 @@
 package main;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -18,7 +19,7 @@ public class app {
 	static MiHandler miHandler = new MiHandler();
 	static ArrayList<Liburua> Libros = miHandler.obtenerLiburu();
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException, ClassNotFoundException, IOException {
 		Scanner sc = new Scanner(System.in); 
 		int zbk = 0;
 		do {
@@ -37,11 +38,10 @@ public class app {
 			System.err.println("TXT Fitxategia");
 			fitxeroTxt.LeerFichero.irakurri(); 
 			Thread.sleep(2000);
-			System.err.println("DAT Fitxategia");
-			//fitxeroDat.Libro();
+			fitxeroDat.LeerFichero.irakurri();
+			Thread.sleep(2000);
 			break;
 		}	
-
 	} 
 
 	public static int zenbakiaDa(String zbks) { 
