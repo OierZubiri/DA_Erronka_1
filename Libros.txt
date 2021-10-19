@@ -1,32 +1,13 @@
-Izenburua: La isla petrificada
-Argitaletxea: Destino Infantil y Juvenil
-Orrialdeak: 285
-Altuera: 28cm
-Oharrak: Castellano
-ISBN: 9788408024989
-Gaiak:	Literatura infantil y juvenil
-******************
-Izenburua: Rey blanco
-Argitaletxea: Ediciones B
-Orrialdeak: 295
-Altuera: 29cm
-Oharrak: Castellano
-ISBN: 9788466668613
-Gaiak:	Novela negra y de intriga
-******************
-Izenburua: La cara norte del corazón
-Argitaletxea: Ediciones Destino
-Orrialdeak: 385
-Altuera: 26cm
-Oharrak: Castellano
-ISBN: 9788423356393
-Gaiak: Novela negra y de intriga
-******************
-Izenburua: Miss Marte
-Argitaletxea: Alfaguara
-Orrialdeak: 245
-Altuera: 24cm
-Oharrak: Castellano
-ISBN: 9788420454337
-Gaiak:	Novela
-******************
+Izenburua: dfy
+Argitaletxea: dts
+Orrialdeak: 34
+Altuera: 34
+Oharrak: rt
+ISBN: 346
+Gaiak: dfIzenburua: dfh
+Argitaletxea: ftguj
+Orrialdeak: 45
+Altuera: 45
+Oharrak: rtfh
+ISBN: 45
+Gaiak: ft

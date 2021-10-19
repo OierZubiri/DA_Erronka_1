@@ -82,4 +82,10 @@ public class Liburua implements Serializable{
 	public void setGaiak(String gaiak) {
 		this.gaiak = gaiak;
 	}
+
+	@Override
+	public String toString() {
+		return "Izenburua: " + izenburua + "\nArgitaletxea: " + argitaletxea + "\nOrrialdeak: " + orrialdeak
+				+ "\nAltuera: " + altuera + "\nOharrak: " + oharrak + "\nISBN: " + ISBN + "\nGaiak: " + gaiak;
+	}	
 }
