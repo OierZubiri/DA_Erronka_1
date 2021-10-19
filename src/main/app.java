@@ -1,7 +1,7 @@
 package main;
 import java.util.ArrayList;
 import java.util.Scanner;
-import fitxeroDOM.Liburua;
+
 import fitxeroDOM.MiHandler;
 
 @SuppressWarnings("serial")

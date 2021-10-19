@@ -8,6 +8,8 @@ import javax.xml.parsers.SAXParserFactory;
 
 import org.xml.sax.SAXException;
 
+import main.Liburua;
+
 public class FitxategiDOM {
 	
 	public static void DOM() {
@@ -29,14 +31,11 @@ public class FitxategiDOM {
 				System.out.println("ISBN: " + lib.getISBN());
 				System.out.println("Gaiak: " + lib.getGaiak());
 			}
-		} catch (ParserConfigurationException e) {
-			// TODO Auto-generated catch block
+		} catch (ParserConfigurationException e) { 
 			e.printStackTrace();
-		} catch (SAXException e) {
-			// TODO Auto-generated catch block
+		} catch (SAXException e) { 
 			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
+		} catch (IOException e) { 
 			e.printStackTrace();
 		}
 	}
