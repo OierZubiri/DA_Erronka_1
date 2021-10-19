@@ -1,6 +1,6 @@
 package fitxeroTxt;
 
-import java.io.*;
+import java.io.*; 
 import java.util.ArrayList;
  
 import main.Liburua;
