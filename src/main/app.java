@@ -40,6 +40,8 @@ public class app {
 				Liburua l1 = gehituLiburu(sc);
 				Libros.add(l1);
 				fitxeroDOM.FitxategiDOM.DOMidatzi(l1);
+				fitxeroDat.LeerFichero.datuakSartu();
+				fitxeroTxt.LeerFichero.idatzi();
 				zenbkiOna = true;
 				break;
 			case 2:
