@@ -2,7 +2,8 @@ package fitxeroTxt;
 
 import java.io.*;
 	public class LeerFichero {
-		 public static void main(String[] args) {
+		 
+		public static void leertxt() {
 				 try{
 					 File fic = new File("Libros.txt");
 					 BufferedReader fichero = new BufferedReader(new FileReader(fic));

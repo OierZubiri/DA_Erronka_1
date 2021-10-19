@@ -1,4 +1,5 @@
 package main;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import fitxeroDOM.Liburua;
@@ -18,7 +19,7 @@ public class app {
 	static MiHandler miHandler = new MiHandler();
 	static ArrayList<Liburua> Libros = miHandler.obtenerLiburu();
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ClassNotFoundException, IOException {
 		Scanner sc = new Scanner(System.in); 
 		int zbk = 0;
 		do {
@@ -32,11 +33,11 @@ public class app {
 			break;
 		case 2:
 			System.out.println("XML Fitxategia");
-			fitxeroDOM.FitxategiDOM.DOM(); 
+			fitxeroDOM.FitxategiDOM.DOMirakurri(); 
 			System.out.println("TXT Fitxategia");
-			//fitxeroTxt.LeerFichero();
+			fitxeroTxt.LeerFichero.leertxt();
 			System.out.println("DAT Fitxategia");
-			//fitxeroDat.Libro();
+			fitxeroDat.LeerFichero.main();
 			break;
 		}	
 
