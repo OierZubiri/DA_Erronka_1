@@ -17,9 +17,13 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
+import main.Liburua;
+
 public class FitxategiDOM {
 	
-	public static void DOMidatzi() throws ParserConfigurationException, SAXException, IOException {
+	
+	
+	public static void DOMidatzi(Liburua lib) throws ParserConfigurationException, SAXException, IOException {
 			
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -28,32 +32,36 @@ public class FitxategiDOM {
 			try {
 				Element elementoRaiz = doc.getDocumentElement();
 
-				Element cochesU = doc.createElement("CD");
-				elementoRaiz.appendChild(cochesU);
-				
-				Element title = doc.createElement("TITLE");
-				title.appendChild(doc.createTextNode("Empire Burlesque"));
-				cochesU.appendChild(title);
+				Element liburuak = doc.createElement("Liburua");
+				elementoRaiz.appendChild(liburuak);
 
-				Element artist = doc.createElement("ARTIST");
-				artist.appendChild(doc.createTextNode("Bob Dylan"));
-				cochesU.appendChild(artist);
+				Element izenburua = doc.createElement("Izenburua");
+				izenburua.appendChild(doc.createTextNode(lib.getIzenburua()));
+				liburuak.appendChild(izenburua);
 				
-				Element country = doc.createElement("COUNTRY");
-				country.appendChild(doc.createTextNode("EEUU"));
-				cochesU.appendChild(country);
+				Element argitaletxea = doc.createElement("Argitaletxea");
+				argitaletxea.appendChild(doc.createTextNode(lib.getArgitaletxea()));
+				liburuak.appendChild(argitaletxea);
 				
-				Element nCoche1 = doc.createElement("COMPANY");
-				nCoche1.appendChild(doc.createTextNode("Columbia"));
-				cochesU.appendChild(nCoche1);
+				Element orrialdeak = doc.createElement("Orrialdeak");
+				orrialdeak.appendChild(doc.createTextNode(lib.getOrrialdeak()));
+				liburuak.appendChild(orrialdeak);
 				
-				Element nCoche2 = doc.createElement("PRICE");
-				nCoche2.appendChild(doc.createTextNode("10.90"));
-				cochesU.appendChild(nCoche2);
+				Element altuera = doc.createElement("Altuera");
+				altuera.appendChild(doc.createTextNode(lib.getAltuera()));
+				liburuak.appendChild(altuera);
 				
-				Element nCoche3 = doc.createElement("YEAR");
-				nCoche3.appendChild(doc.createTextNode("1985"));
-				cochesU.appendChild(nCoche3);
+				Element oharrak = doc.createElement("Oharrak");
+				oharrak.appendChild(doc.createTextNode(lib.getOharrak()));
+				liburuak.appendChild(oharrak);
+				
+				Element isbn = doc.createElement("ISBN");
+				isbn.appendChild(doc.createTextNode(lib.getISBN()));
+				liburuak.appendChild(isbn);
+				
+				Element gaiak = doc.createElement("Gaiak");
+				gaiak.appendChild(doc.createTextNode(lib.getGaiak()));
+				liburuak.appendChild(gaiak);
 				
 				
 
@@ -62,12 +70,11 @@ public class FitxategiDOM {
 
 				DOMSource source = new DOMSource(doc);
 
-				StreamResult result = new StreamResult("cd_catalog1.xml");
+				StreamResult result = new StreamResult("Liburuak.xml");
 
 				transformer.transform(source, result);
 
-				StreamResult consoleResult = new StreamResult(System.out);
-				transformer.transform(source, consoleResult);
+				
 
 			} catch (Exception e) {
 
@@ -93,14 +100,11 @@ public class FitxategiDOM {
 				System.out.println("ISBN: " + lib.getISBN());
 				System.out.println("Gaiak: " + lib.getGaiak());
 			}
-		} catch (ParserConfigurationException e) {
-			// TODO Auto-generated catch block
+		} catch (ParserConfigurationException e) { 
 			e.printStackTrace();
-		} catch (SAXException e) {
-			// TODO Auto-generated catch block
+		} catch (SAXException e) { 
 			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
+		} catch (IOException e) { 
 			e.printStackTrace();
 		}
 	}
