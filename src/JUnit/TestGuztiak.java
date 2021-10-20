@@ -2,7 +2,8 @@ package JUnit;
 import static org.junit.Assert.*;
 import java.util.Scanner;
 import org.junit.Test;
-import main.Liburua;
+
+import Metodoak.Liburua;
 
 public class TestGuztiak {
 	
@@ -11,7 +12,7 @@ public class TestGuztiak {
 	@Test
 	public void testZenbakiaDa() {
 		int zbk = 9;
-		assertEquals(zbk, main.app.zenbakiaDa("9"));
+		assertEquals(zbk, Metodoak.Metodoak.zenbakiaDa("9"));
 	}
 
 	@Test
@@ -19,7 +20,7 @@ public class TestGuztiak {
 		
 		Liburua l = new Liburua("Empire Burlesque", "Iturribide", "156", "12", "Bi ohar ditu", "234567", "2");
 	
-		assertEquals(l.getIzenburua(), main.app.gehituLiburu(sc).getIzenburua());
+		assertEquals(l.getIzenburua(), Metodoak.Metodoak.gehituLiburu(sc).getIzenburua());
 		
 		}
 	

@@ -1,7 +1,8 @@
-package main;
+package Metodoak;
 
 import java.io.Serializable;
 
+@SuppressWarnings("serial")
 public class Liburua implements Serializable{
 	private String izenburua;
 	private String argitaletxea;

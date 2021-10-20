@@ -1,13 +1,7 @@
-package main;
-
-import java.io.IOException;
+package Metodoak;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import javax.xml.parsers.ParserConfigurationException;
-
-import org.xml.sax.SAXException; 
- 
 @SuppressWarnings("serial")
 class ArgumentuaHutsik extends RuntimeException {
 	public ArgumentuaHutsik() {
@@ -20,64 +14,18 @@ class ZenbakiaDa1 extends RuntimeException {
 	};
 }
 
-public class app {
+public class Metodoak {
+
+	public static ArrayList<Liburua> Libros = new ArrayList<>();
 	
-	private static ArrayList<Liburua> Libros = new ArrayList<>();
- 
-	public static void main(String[] args) throws InterruptedException, ClassNotFoundException, IOException, ParserConfigurationException, SAXException {
-		Scanner sc = new Scanner(System.in); 
-		boolean zenbkiOna = false;
-		int zbk = 0;
-		do {
-			do {
-				System.out.println("1 --> Gehitu\n"
-						+ "2 --> Irakurri\n"
-						+ "3 --> Atera");
-				zbk = zenbakiaDa(sc.nextLine());  
-			}while(zbk == -1); 
-			switch (zbk) {
-			case 1:
-				Liburua l1 = gehituLiburu(sc);
-				Libros.add(l1);
-				fitxeroDOM.FitxategiDOM.DOMidatzi(l1);
-				fitxeroDat.LeerFichero.datuakSartu();
-				fitxeroTxt.LeerFichero.idatzi();
-				zenbkiOna = true;
-				break;
-			case 2:
-				System.err.println("XML Fitxategia");
-				fitxeroDOM.FitxategiDOM.DOMirakurri(); 
-				Thread.sleep(2000);
-				System.err.println("TXT Fitxategia");
-				fitxeroTxt.LeerFichero.irakurri(); 
-				Thread.sleep(2000);
-				System.err.println("DAT Fitxategia");
-				fitxeroDat.LeerFichero.irakurri();
-				Thread.sleep(2000);
-				zenbkiOna = true;
-				break;
-			case 3:
-				zenbkiOna = false;
-				break;
-			}	
-		}while(zenbkiOna);
-	}  
-
-	public static int zenbakiaDa(String zbks) { 
-		int zbk = 0;
-		try {
-			zbk = Integer.parseInt(zbks);
-		} catch (Exception e) {
-			System.out.println("Ez duzu zenbaki bat sartu");
-			zbk = -1;
-		}
-		return zbk;
-	}
-
+	//***************************************************************************************************************************//
+	
 	public static void ArgumentuaHutsik(String testua) throws ArgumentuaHutsik {
 		if (testua.length() == 0)
 			throw new ArgumentuaHutsik();
 	}
+
+	//***************************************************************************************************************************//
 
 	public static void ZenbakiaDa1(String testua) throws ZenbakiaDa1 {
 		try {
@@ -86,6 +34,8 @@ public class app {
 			throw new ZenbakiaDa1();
 		}
 	}
+
+	//***************************************************************************************************************************//
 
 	public static Liburua gehituLiburu(Scanner sc) {
 		boolean ondo = false;
@@ -188,9 +138,26 @@ public class app {
 		return new Liburua(izenburua, argitaletxea, orrialdeak, altuera, oharrak, ISBN, gaiak);
 	}
 
+	//***************************************************************************************************************************//
+
+	public static int zenbakiaDa(String zbks) { 
+		int zbk = 0;
+		try {
+			zbk = Integer.parseInt(zbks);
+		} catch (Exception e) {
+			System.out.println("Ez duzu zenbaki bat sartu");
+			zbk = -1;
+		}
+		return zbk;
+	}	
+
+	//***************************************************************************************************************************//
+	
 	public static ArrayList<Liburua> getLibros() {
 		return Libros;
 	}
+
+	//***************************************************************************************************************************//
 
 	public static void setLibros(ArrayList<Liburua> libros) {
 		Libros = libros;

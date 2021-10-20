@@ -1,11 +1,11 @@
-package fitxeroDOM;
+package Ficheros;
 import java.util.ArrayList;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import main.Liburua;
+import Metodoak.Liburua;
 
 public class MiHandler extends DefaultHandler{
 
