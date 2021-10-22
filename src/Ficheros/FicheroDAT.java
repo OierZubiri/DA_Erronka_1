@@ -26,7 +26,7 @@ public class FicheroDAT {
 		ObjectOutputStream dataIS;
 
 		try {
-			fitxategia = new FileOutputStream(fitxeroa, true);
+			fitxategia = new FileOutputStream(fitxeroa);
 			dataIS = new ObjectOutputStream(fitxategia);
 
 			for (int i = 0; i < Libros.size(); i++) {

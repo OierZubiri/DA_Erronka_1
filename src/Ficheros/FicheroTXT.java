@@ -12,8 +12,8 @@ public class FicheroTXT {
 	public static boolean sartuTXT() {
 		ArrayList<Liburua> Libros = Metodoak.MetodoLiburuak.getLibros();
 		try {
-			BufferedWriter fichero = new BufferedWriter(new FileWriter("./datuak/Liburuak.txt", true));
-			for (int i = 0; i < Libros.size(); i++) {
+			BufferedWriter fichero = new BufferedWriter(new FileWriter("./datuak/Liburuak.txt",true));
+			for (int i = Libros.size()-1; i < Libros.size(); i++) {
 				fichero.write(Libros.get(i).toString());
 			}
 			fichero.close();
