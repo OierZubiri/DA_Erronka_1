@@ -1,0 +1,24 @@
+------------------------------------------------------
+Izenburua: hg
+Argitaletxea: hg
+Orrialdeak: 1
+Altuera: 1
+Oharrak: 1
+ISBN: 1
+Gaiak: 1
+------------------------------------------------------
+Izenburua: aj
+Argitaletxea: j
+Orrialdeak: 12
+Altuera: 2
+Oharrak: 2
+ISBN: 2
+Gaiak: 2
+------------------------------------------------------
+Izenburua: ojo
+Argitaletxea: ihi
+Orrialdeak: 3
+Altuera: 3
+Oharrak: 3
+ISBN: 3
+Gaiak: 3
