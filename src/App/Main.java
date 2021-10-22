@@ -18,18 +18,19 @@ public class Main {
 
 		do {
 			do {
-				System.out.println("1 --> Gehitu\n" + "2 --> Irakurri\n" + "3 --> Atera");
+				System.out.println("\n1 --> Gehitu\n" + "2 --> Irakurri\n" + "3 --> Atera");
 				zbk = Metodoak.Metodoak.zenbakiaDa(sc.nextLine());
 			} while (zbk == -1);
 
 			switch (zbk) {
 
 			case 1:
-				Liburua l1 = Metodoak.Metodoak.gehituLiburu(sc);
-				Metodoak.Metodoak.Libros.add(l1);
+				Liburua l1 = Metodoak.MetodoLiburuak.gehituLiburu(sc);
+				Metodoak.MetodoLiburuak.sartutakoLiburua(l1);
+				Metodoak.MetodoLiburuak.Libros.add(l1);
 				Ficheros.FicheroDOM.sartuDOM(l1);
 				Ficheros.FicheroDAT.sartuDAT();
-				Ficheros.FicheroTXT.sartuTXT();
+				Ficheros.FicheroTXT.sartuTXT();	
 				zenbkiOna = true;
 				break;
 			case 2:

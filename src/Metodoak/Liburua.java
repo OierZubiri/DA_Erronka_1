@@ -86,7 +86,7 @@ public class Liburua implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Izenburua: " + izenburua + "\nArgitaletxea: " + argitaletxea + "\nOrrialdeak: " + orrialdeak
-				+ "\nAltuera: " + altuera + "\nOharrak: " + oharrak + "\nISBN: " + ISBN + "\nGaiak: " + gaiak;
+		return "------------------------------------------------------\nIzenburua: " + izenburua + "\nArgitaletxea: " + argitaletxea + "\nOrrialdeak: " + orrialdeak
+				+ "\nAltuera: " + altuera + "\nOharrak: " + oharrak + "\nISBN: " + ISBN + "\nGaiak: " + gaiak + "\n";
 	}	
 }

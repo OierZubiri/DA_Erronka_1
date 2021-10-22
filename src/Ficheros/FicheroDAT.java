@@ -19,14 +19,14 @@ public class FicheroDAT {
 
 	// __________________________________________________________________________________________________________________//
 
-	public static void sartuDAT() {
-		ArrayList<Liburua> Libros = Metodoak.Metodoak.getLibros();
+	public static boolean sartuDAT() {
+		ArrayList<Liburua> Libros = Metodoak.MetodoLiburuak.getLibros();
 		File fitxeroa = new File("./datuak/Liburuak.dat");
 		FileOutputStream fitxategia;
 		ObjectOutputStream dataIS;
 
 		try {
-			fitxategia = new FileOutputStream(fitxeroa, false);
+			fitxategia = new FileOutputStream(fitxeroa, true);
 			dataIS = new ObjectOutputStream(fitxategia);
 
 			for (int i = 0; i < Libros.size(); i++) {
@@ -40,11 +40,12 @@ public class FicheroDAT {
 			JOptionPane.showMessageDialog(null, "Errorea fitxeroa idazterakoan");
 			e1.printStackTrace();
 		}
+		return true;
 	}
 
 	// __________________________________________________________________________________________________________________//
 
-	public static void irakurriDAT() throws IOException, ClassNotFoundException, InterruptedException {
+	public static boolean irakurriDAT() throws IOException, ClassNotFoundException, InterruptedException {
 		ArrayList<Liburua> libros = new ArrayList<>();
 		Metodoak.Liburua liburua;
 		File fitxeroa = new File("./datuak/Liburuak.dat");
@@ -52,6 +53,7 @@ public class FicheroDAT {
 		ObjectInputStream dataIS;
 		
 		System.out.println("\n" + "------------------------------------------------------");
+		Thread.sleep(100);
 		System.err.println("DAT Fitxategia");
 		
 		try {
@@ -71,9 +73,9 @@ public class FicheroDAT {
 			System.out.println("FIN DE LECTURA.");
 		} catch (StreamCorruptedException x) {
 		}
-		Metodoak.Metodoak.setLibros(libros);
-		Thread.sleep(2000);
-
+		Metodoak.MetodoLiburuak.setLibros(libros);
+		Thread.sleep(1000);
+		return true;
 	}
 
 }

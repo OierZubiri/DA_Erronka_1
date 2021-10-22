@@ -9,16 +9,10 @@ public class FicheroTXT {
 
 	// __________________________________________________________________________________________________________________//
 
-	public static void sartuTXT() {
-		ArrayList<Liburua> Libros = Metodoak.Metodoak.getLibros();
-
-		for (int i = 0; i < Libros.size(); i++) {
-			System.err.println(Libros.get(i).toString());
-		}
-
+	public static boolean sartuTXT() {
+		ArrayList<Liburua> Libros = Metodoak.MetodoLiburuak.getLibros();
 		try {
-			BufferedWriter fichero = new BufferedWriter(new FileWriter("./datuak/Liburuak.txt", false));
-			fichero.write("------------------------------------------------------" + "\n");
+			BufferedWriter fichero = new BufferedWriter(new FileWriter("./datuak/Liburuak.txt", true));
 			for (int i = 0; i < Libros.size(); i++) {
 				fichero.write(Libros.get(i).toString());
 			}
@@ -28,14 +22,16 @@ public class FicheroTXT {
 		} catch (IOException io) {
 			System.out.println("Error de E/S ");
 		}
+		return true;
 	}
 
 	// __________________________________________________________________________________________________________________//
 
-	public static void irakurriTXT() throws InterruptedException {
+	public static boolean irakurriTXT() throws InterruptedException {
 		ArrayList<Liburua> libros = new ArrayList<>();
 
 		System.out.println("\n" + "------------------------------------------------------");
+		Thread.sleep(100);
 		System.err.println("TXT Fitxategia");
 
 		try {
@@ -53,9 +49,9 @@ public class FicheroTXT {
 			System.out.println("Error de E/S ");
 		}
 
-		Metodoak.Metodoak.setLibros(libros);
-
-		Thread.sleep(2000);
+		Metodoak.MetodoLiburuak.setLibros(libros);
+		Thread.sleep(1000);
+		return true;
 	}
 
 }

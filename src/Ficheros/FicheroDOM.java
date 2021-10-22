@@ -24,7 +24,7 @@ public class FicheroDOM {
 
 	// __________________________________________________________________________________________________________________//
 
-	public static void sartuDOM(Liburua lib) throws ParserConfigurationException, SAXException, IOException {
+	public static boolean sartuDOM(Liburua lib) throws ParserConfigurationException, SAXException, IOException {
 
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -76,13 +76,15 @@ public class FicheroDOM {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return true;
 	}
 
 	// __________________________________________________________________________________________________________________//
 
-	public static void irakurriDOM() throws InterruptedException {
+	public static boolean irakurriDOM() throws InterruptedException {
 		
 		System.out.println("\n" + "------------------------------------------------------");
+		Thread.sleep(100);
 		System.err.println("XML Fitxategia");
 		
 		try {
@@ -111,7 +113,8 @@ public class FicheroDOM {
 			e.printStackTrace();
 		}
 		
-		Thread.sleep(2000);
+		Thread.sleep(1000);
+		return true;
 	}
 
 }

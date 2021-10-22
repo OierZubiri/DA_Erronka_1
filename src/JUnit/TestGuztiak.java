@@ -1,13 +1,24 @@
 package JUnit;
-import static org.junit.Assert.*;
-import java.util.Scanner;
-import org.junit.Test;
 
+import static org.junit.Assert.*;
+
+import java.io.IOException;
+import java.util.Scanner;
+
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.junit.Test;
+import org.xml.sax.SAXException;
+
+import Ficheros.FicheroDAT;
+import Ficheros.FicheroDOM;
+import Ficheros.FicheroTXT;
 import Metodoak.Liburua;
 
 public class TestGuztiak {
-	
-	Scanner sc = new Scanner(System.in); 
+
+	Scanner sc = new Scanner(System.in);
+	Liburua l = new Liburua("Empire Burlesque", "Iturribide", "156", "12", "Bi ohar ditu", "234567", "2");
 	
 	@Test
 	public void testZenbakiaDa() {
@@ -17,11 +28,64 @@ public class TestGuztiak {
 
 	@Test
 	public void testGehituiburua() {
-		
-		Liburua l = new Liburua("Empire Burlesque", "Iturribide", "156", "12", "Bi ohar ditu", "234567", "2");
+		assertEquals(l.getIzenburua(), Metodoak.MetodoLiburuak.gehituLiburu(sc).getIzenburua());
+
+	}
+
+	@Test
+	public void testSartuDAT() {
+
+		assertTrue(FicheroDAT.sartuDAT());
+
+	}
+
+	@Test
+	public void testIrakuriDAT() throws ClassNotFoundException, IOException, InterruptedException {
+
+		assertTrue(FicheroDAT.irakurriDAT());
+
+	}
+
+	@Test
+	public void testSartuDOM() throws ParserConfigurationException, SAXException, IOException {
+
+		assertTrue(FicheroDOM.sartuDOM(l));
+
+	}
+
+	@Test
+	public void testIrakuriDOM() throws ClassNotFoundException, IOException, InterruptedException {
+
+		assertTrue(FicheroDOM.irakurriDOM());
+
+	}
+
+	@Test
+	public void testSartuTXT() {
+
+		assertTrue(FicheroDAT.sartuDAT());
+
+	}
+
+	@Test
+	public void testIrakuriTXT() throws ClassNotFoundException, IOException, InterruptedException {
+
+		assertTrue(FicheroTXT.irakurriTXT());
+
+	}
 	
-		assertEquals(l.getIzenburua(), Metodoak.Metodoak.gehituLiburu(sc).getIzenburua());
-		
-		}
+	@Test
+	public void testGetLibros(){
+
+		assertEquals(Metodoak.MetodoLiburuak.Libros, Metodoak.MetodoLiburuak.getLibros());
+
+	}
+
+	@Test
+	public void testSetLibros(){
+
+		assertTrue(Metodoak.MetodoLiburuak.setLibros(Metodoak.MetodoLiburuak.Libros));
+
+	}
 	
 }
