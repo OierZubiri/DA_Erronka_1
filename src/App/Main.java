@@ -42,6 +42,8 @@ public class Main {
 			case 3:
 				zenbkiOna = false;
 				break;
+			default:
+				System.out.println("Sartu 1,2 edo 3");
 			}
 		} while (zenbkiOna);
 	}

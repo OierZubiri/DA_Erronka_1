@@ -2,7 +2,9 @@ package JUnit;
 
 import static org.junit.Assert.*;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Scanner;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -28,7 +30,12 @@ public class TestGuztiak {
 
 	@Test
 	public void testGehituiburua() {
-		assertEquals(l.getIzenburua(), Metodoak.MetodoLiburuak.gehituLiburu(sc).getIzenburua());
+		String input = "Empire Burlesque\nIturribide\n156\n12\nBi ohar ditu\n234567\n2";
+		InputStream in = new ByteArrayInputStream(input.getBytes());
+		System.setIn(in);
+	    Scanner reader = new Scanner(System.in); 
+		
+		assertEquals(l.getIzenburua(), Metodoak.MetodoLiburuak.gehituLiburu(reader).getIzenburua());
 
 	}
 
