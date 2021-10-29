@@ -104,49 +104,56 @@ public class FicheroDOM {
 				if(mat.matches()==true) {
 					System.out.println("Izenburua: " + lib.getIzenburua());
 				}else {
-					System.out.println("Izenburua: 0");
+					lib.setIzenburua("0");
+					System.out.println("Izenburua: " +  lib.getIzenburua());
 				}
 				Pattern pat1 = Pattern.compile(Metodoak.MetodoakPatroiak.izena);
 				Matcher mat1 = pat1.matcher(lib.getArgitaletxea());
 				if(mat1.matches()==true) {
 					System.out.println("Argitaletxea: " + lib.getArgitaletxea());
 				}else {
-					System.out.println("Argitaletxea: 0");
+					lib.setArgitaletxea("0");
+					System.out.println("Argitaletxea:"  +  lib.getArgitaletxea());
 				}
 				Pattern pat2 = Pattern.compile(Metodoak.MetodoakPatroiak.zenbakia);
 				Matcher mat2 = pat2.matcher(lib.getOrrialdeak());
 				if(mat2.matches()==true) {
 					System.out.println("Orrialdeak: " + lib.getOrrialdeak());
 				}else {
-					System.out.println("Orrialdeak: 0");
+					lib.setOrrialdeak("0");
+					System.out.println("Orrialdeak: " + lib.getOrrialdeak());
 				}
 				Pattern pat3 = Pattern.compile(Metodoak.MetodoakPatroiak.zenbakia);
 				Matcher mat3 = pat3.matcher(lib.getAltuera());
 				if(mat3.matches()==true) {
 					System.out.println("Altuera: " + lib.getAltuera());
 				}else {
-					System.out.println("Altuera: 0");
+					lib.setAltuera("0");
+					System.out.println("Altuera: "+ lib.getAltuera());
 				}
 				Pattern pat4 = Pattern.compile(Metodoak.MetodoakPatroiak.texto);
 				Matcher mat4 = pat4.matcher(lib.getOharrak());
 				if(mat4.matches()==true) {
 					System.out.println("Oharrak: " + lib.getOharrak());
 				}else {
-					System.out.println("Oharrak: 0");
+					lib.setOharrak("0");
+					System.out.println("Oharrak: " + lib.getOharrak());
 				}
 				Pattern pat5 = Pattern.compile(Metodoak.MetodoakPatroiak.ISBN);
 				Matcher mat5 = pat5.matcher(lib.getISBN());
 				if(mat5.matches()==true) {
 					System.out.println("ISBN: " + lib.getISBN());
 				}else {
-					System.out.println("ISBN: 0");
+					lib.setISBN("0");
+					System.out.println("ISBN: "+lib.getISBN());
 				}
 				Pattern pat6 = Pattern.compile(Metodoak.MetodoakPatroiak.zenbakia);
 				Matcher mat6 = pat6.matcher(lib.getGaiak());
 				if(mat6.matches()==true) {
 					System.out.println("Gaiak: " + lib.getGaiak());
 				}else {
-					System.out.println("Gaiak: 0");
+					lib.setGaiak("0");
+					System.out.println("Gaiak: "+lib.getGaiak());
 				}
 			}
 
@@ -161,5 +168,7 @@ public class FicheroDOM {
 		Thread.sleep(1000);
 		return true;
 	}
+	
+
 
 }

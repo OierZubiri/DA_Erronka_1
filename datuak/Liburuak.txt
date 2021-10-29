@@ -1,64 +1,8 @@
 ------------------------------------------------------
-Izenburua: hg
-Argitaletxea: hg
-Orrialdeak: 1
-Altuera: 1
-Oharrak: 1
-ISBN: 1
-Gaiak: 1
-------------------------------------------------------
-Izenburua: aj
-Argitaletxea: j
-Orrialdeak: 12
-Altuera: 2
-Oharrak: 2
-ISBN: 2
-Gaiak: 2
-------------------------------------------------------
-Izenburua: ojo
-Argitaletxea: ihi
-Orrialdeak: 3
-Altuera: 3
-Oharrak: 3
-ISBN: 3
-Gaiak: 3
-------------------------------------------------------
 Izenburua: asier
-Argitaletxea: hola
+Argitaletxea: Lertxundi
 Orrialdeak: 12
 Altuera: 12
-Oharrak: 12
-ISBN: 123456
-Gaiak: 12
-------------------------------------------------------
-Izenburua: asier
-Argitaletxea: f
-Orrialdeak: 12
-Altuera: 12
-Oharrak: hoasdnaKNASDNJDNDCSDNJSCJN  SDHIISFFHEIFHC
-ISBN: 1234567897653A
-Gaiak: 12
-------------------------------------------------------
-Izenburua: ser
-Argitaletxea: saf
-Orrialdeak: 12
-Altuera: 12
-Oharrak: dgadgaedg rgfaga
-ISBN: 0-596-52068-9
-Gaiak: 12
-------------------------------------------------------
-Izenburua: asier
-Argitaletxea: sdf
-Orrialdeak: 12
-Altuera: 12
-Oharrak: sfwf
-ISBN: 0-596-52068-9
-Gaiak: 12
-------------------------------------------------------
-Izenburua: 122423
-Argitaletxea: 12323
-Orrialdeak: 23
-Altuera: 123
-Oharrak: dgdgdgg gadggdfg
+Oharrak: hola
 ISBN: 0-596-52068-9
 Gaiak: 12

@@ -2,6 +2,7 @@ package Ficheros;
 
 import java.io.*;
 
+
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -94,7 +95,7 @@ public class FicheroTXT {
 		
 		if(l.contains("Orrialdeak:")) {
 			 split = l.indexOf(":");
-			 String s = l.substring(split+1);
+			 String s = l.substring(split+2);
 			 Matcher mat = pat3.matcher(s);
 			 if(mat.matches()==true) {
 					return "";
@@ -105,7 +106,7 @@ public class FicheroTXT {
 		
 		if(l.contains("Altuera:")) {
 			 split = l.indexOf(":");
-			 String s = l.substring(split+1);
+			 String s = l.substring(split+2);
 			 Matcher mat = pat3.matcher(s);
 			 if(mat.matches()==true) {
 					return "";
@@ -116,7 +117,7 @@ public class FicheroTXT {
 		
 		if(l.contains("Oharrak:")) {
 			 split = l.indexOf(":");
-			 String s = l.substring(split+1);
+			 String s = l.substring(split+2);
 			 Matcher mat = pat1.matcher(s);
 			 if(mat.matches()==true) {
 					return "";
@@ -127,7 +128,7 @@ public class FicheroTXT {
 		
 		if(l.contains("ISBN:")) {
 			 split = l.indexOf(":");
-			 String s = l.substring(split+1);
+			 String s = l.substring(split+2);
 			 Matcher mat = pat2.matcher(s);
 			 if(mat.matches()==true) {
 					return "";
@@ -138,7 +139,7 @@ public class FicheroTXT {
 		
 		if(l.contains("Gaiak:")) {
 			 split = l.indexOf(":");
-			 String s = l.substring(split+1);
+			 String s = l.substring(split+2);
 			 Matcher mat = pat3.matcher(s);
 			 if(mat.matches()==true) {
 					return "";
