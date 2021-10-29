@@ -1,7 +1,10 @@
 package Ficheros;
 
 import java.io.*;
+
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import Metodoak.Liburua;
 
@@ -39,8 +42,14 @@ public class FicheroTXT {
 			BufferedReader fichero = new BufferedReader(new FileReader(fic));
 			String linea;
 
-			while ((linea = fichero.readLine()) != null)
-				System.out.print(linea + " \n");
+			while ((linea = fichero.readLine()) != null) {
+				if(hartu(linea).equals("")) {
+					System.out.print(linea + " \n");
+				}else {
+					System.out.println(hartu(linea)+"0");
+				}
+			}
+				
 
 			fichero.close();
 		} catch (FileNotFoundException fn) {
@@ -52,6 +61,92 @@ public class FicheroTXT {
 		Metodoak.MetodoLiburuak.setLibros(libros);
 		Thread.sleep(1000);
 		return true;
+	}
+	
+	public static String hartu(String l) {
+		int split=0;
+		Pattern pat = Pattern.compile(Metodoak.MetodoakPatroiak.izena);
+		Pattern pat1 = Pattern.compile(Metodoak.MetodoakPatroiak.texto);
+		Pattern pat2 = Pattern.compile(Metodoak.MetodoakPatroiak.ISBN);
+		Pattern pat3 = Pattern.compile(Metodoak.MetodoakPatroiak.zenbakia);
+		
+		if(l.contains("Izenburua:")) {
+			 split = l.indexOf(":");
+			 String s = l.substring(split+1);
+			 Matcher mat = pat.matcher(s);
+			 if(mat.matches()==true) {
+					return "";
+				}else {
+					return "Izenburua: ";
+				}
+		 }
+		
+		if(l.contains("Argitaletxea:")) {
+			 split = l.indexOf(":");
+			 String s = l.substring(split+1);
+			 Matcher mat = pat.matcher(s);
+			 if(mat.matches()==true) {
+					return "";
+				}else {
+					return "Argitaletxea: ";
+				}
+		 }
+		
+		if(l.contains("Orrialdeak:")) {
+			 split = l.indexOf(":");
+			 String s = l.substring(split+1);
+			 Matcher mat = pat3.matcher(s);
+			 if(mat.matches()==true) {
+					return "";
+				}else {
+					return "Orrialdeak: ";
+				}
+		 }
+		
+		if(l.contains("Altuera:")) {
+			 split = l.indexOf(":");
+			 String s = l.substring(split+1);
+			 Matcher mat = pat3.matcher(s);
+			 if(mat.matches()==true) {
+					return "";
+				}else {
+					return "Altuera: ";
+				}
+		 }
+		
+		if(l.contains("Oharrak:")) {
+			 split = l.indexOf(":");
+			 String s = l.substring(split+1);
+			 Matcher mat = pat1.matcher(s);
+			 if(mat.matches()==true) {
+					return "";
+				}else {
+					return "Oharrak: ";
+				}
+		 }
+		
+		if(l.contains("ISBN:")) {
+			 split = l.indexOf(":");
+			 String s = l.substring(split+1);
+			 Matcher mat = pat2.matcher(s);
+			 if(mat.matches()==true) {
+					return "";
+				}else {
+					return "ISBN: ";
+				}
+		 }
+		
+		if(l.contains("Gaiak:")) {
+			 split = l.indexOf(":");
+			 String s = l.substring(split+1);
+			 Matcher mat = pat3.matcher(s);
+			 if(mat.matches()==true) {
+					return "";
+				}else {
+					return "Gaiak: ";
+				}
+		 }
+		return "";
 	}
 
 }

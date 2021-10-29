@@ -3,6 +3,8 @@ package Ficheros;
 import java.io.IOException;
 
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -96,13 +98,56 @@ public class FicheroDOM {
 
 			for (Liburua lib : Libros) {
 				System.out.println("------------------------------------------------------");
-				System.out.println("Izenburua: " + lib.getIzenburua());
-				System.out.println("Argitaletxea: " + lib.getArgitaletxea());
-				System.out.println("Orrialdeak: " + lib.getOrrialdeak());
-				System.out.println("Altuera: " + lib.getAltuera());
-				System.out.println("Oharrak: " + lib.getOharrak());
-				System.out.println("ISBN: " + lib.getISBN());
-				System.out.println("Gaiak: " + lib.getGaiak());
+				
+				Pattern pat = Pattern.compile(Metodoak.MetodoakPatroiak.izena);
+				Matcher mat = pat.matcher(lib.getIzenburua());
+				if(mat.matches()==true) {
+					System.out.println("Izenburua: " + lib.getIzenburua());
+				}else {
+					System.out.println("Izenburua: 0");
+				}
+				Pattern pat1 = Pattern.compile(Metodoak.MetodoakPatroiak.izena);
+				Matcher mat1 = pat1.matcher(lib.getArgitaletxea());
+				if(mat1.matches()==true) {
+					System.out.println("Argitaletxea: " + lib.getArgitaletxea());
+				}else {
+					System.out.println("Argitaletxea: 0");
+				}
+				Pattern pat2 = Pattern.compile(Metodoak.MetodoakPatroiak.zenbakia);
+				Matcher mat2 = pat2.matcher(lib.getOrrialdeak());
+				if(mat2.matches()==true) {
+					System.out.println("Orrialdeak: " + lib.getOrrialdeak());
+				}else {
+					System.out.println("Orrialdeak: 0");
+				}
+				Pattern pat3 = Pattern.compile(Metodoak.MetodoakPatroiak.zenbakia);
+				Matcher mat3 = pat3.matcher(lib.getAltuera());
+				if(mat3.matches()==true) {
+					System.out.println("Altuera: " + lib.getAltuera());
+				}else {
+					System.out.println("Altuera: 0");
+				}
+				Pattern pat4 = Pattern.compile(Metodoak.MetodoakPatroiak.texto);
+				Matcher mat4 = pat4.matcher(lib.getOharrak());
+				if(mat4.matches()==true) {
+					System.out.println("Oharrak: " + lib.getOharrak());
+				}else {
+					System.out.println("Oharrak: 0");
+				}
+				Pattern pat5 = Pattern.compile(Metodoak.MetodoakPatroiak.ISBN);
+				Matcher mat5 = pat5.matcher(lib.getISBN());
+				if(mat5.matches()==true) {
+					System.out.println("ISBN: " + lib.getISBN());
+				}else {
+					System.out.println("ISBN: 0");
+				}
+				Pattern pat6 = Pattern.compile(Metodoak.MetodoakPatroiak.zenbakia);
+				Matcher mat6 = pat6.matcher(lib.getGaiak());
+				if(mat6.matches()==true) {
+					System.out.println("Gaiak: " + lib.getGaiak());
+				}else {
+					System.out.println("Gaiak: 0");
+				}
 			}
 
 		} catch (ParserConfigurationException e) {
