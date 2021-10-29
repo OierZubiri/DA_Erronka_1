@@ -2,10 +2,14 @@ package App;
 
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
 
 import Metodoak.Liburua;
+import Metodoak.MetodoakPatroiak;
 
 public class Main {
 
@@ -14,15 +18,20 @@ public class Main {
 
 		Scanner sc = new Scanner(System.in);
 		boolean zenbkiOna = false;
-		int zbk = 0;
+		String zbk;
 
 		do {
+			Pattern p = Pattern.compile(MetodoakPatroiak.zenbakiaMenua);
 			do {
+				zenbkiOna = true;
 				System.out.println("\n1 --> Gehitu\n" + "2 --> Irakurri\n" + "3 --> Atera");
-				zbk = Metodoak.Metodoak.zenbakiaDa(sc.nextLine());
-			} while (zbk == -1);
+				zbk = sc.nextLine(); 
+				Matcher m = p.matcher(zbk);
+				if(m.matches()) 
+					zenbkiOna = false; 
+			} while (zenbkiOna);
 
-			switch (zbk) {
+			switch (Integer.parseInt(zbk)) {
 
 			case 1:
 				Liburua l1 = Metodoak.MetodoLiburuak.gehituLiburu(sc);
