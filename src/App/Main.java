@@ -24,7 +24,7 @@ public class Main {
 			Pattern p = Pattern.compile(MetodoakPatroiak.zenbakiaMenua);
 			do {
 				zenbkiOna = true;
-				System.out.println("\n1 --> Gehitu\n" + "2 --> Irakurri\n" + "3 --> Atera");
+				System.out.println("\n1 --> Gehitu\n" + "2 --> Irakurri\n" + "3 --> Liburu bilatu\n" + "4 --> Atera");
 				zbk = sc.nextLine(); 
 				Matcher m = p.matcher(zbk);
 				if(m.matches()) 
@@ -49,10 +49,15 @@ public class Main {
 				zenbkiOna = true;
 				break;
 			case 3:
+				Metodoak.MetodoLiburuak.bilatuLiburua(sc);
+				zenbkiOna = false;
+				break;
+			case 4:
+				
 				zenbkiOna = false;
 				break;
 			default:
-				System.out.println("Sartu 1,2 edo 3");
+				System.out.println("Sartu 1 eta 4 artean egin behar da");
 			}
 		} while (zenbkiOna);
 	}
