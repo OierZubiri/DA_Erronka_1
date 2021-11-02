@@ -20,79 +20,127 @@ import Metodoak.Liburua;
 public class TestGuztiak {
 
 	Scanner sc = new Scanner(System.in);
-	Liburua l = new Liburua("Empire Burlesque", "Iturribide", "156", "12", "Bi ohar ditu", "234567", "2");
-	
-	@Test
-	public void testZenbakiaDa() {
-		int zbk = 9;
-		assertEquals(zbk, Metodoak.Metodoak.zenbakiaDa("9"));
-	}
+	Liburua l = new Liburua("Empire Burlesque", "Iturribide", "156", "12", "Bi ohar ditu", "0-596-52068-9", "2");
 
 	@Test
 	public void testGehituiburua() {
-		String input = "Empire Burlesque\nIturribide\n156\n12\nBi ohar ditu\n234567\n2";
+		String input = "Empire Burlesque\nIturribide\n156\n12\nBi ohar ditu\n0-596-52068-9\n2";
 		InputStream in = new ByteArrayInputStream(input.getBytes());
 		System.setIn(in);
-	    Scanner reader = new Scanner(System.in); 
-		
+		Scanner reader = new Scanner(System.in);
 		assertEquals(l.getIzenburua(), Metodoak.MetodoLiburuak.gehituLiburu(reader).getIzenburua());
-
 	}
 
 	@Test
 	public void testSartuDAT() {
-
 		assertTrue(FicheroDAT.sartuDAT());
-
 	}
 
 	@Test
 	public void testIrakuriDAT() throws ClassNotFoundException, IOException, InterruptedException {
-
 		assertTrue(FicheroDAT.irakurriDAT());
-
 	}
 
 	@Test
 	public void testSartuDOM() throws ParserConfigurationException, SAXException, IOException {
-
 		assertTrue(FicheroDOM.sartuDOM(l));
-
 	}
 
 	@Test
 	public void testIrakuriDOM() throws ClassNotFoundException, IOException, InterruptedException {
-
 		assertTrue(FicheroDOM.irakurriDOM());
-
 	}
 
 	@Test
 	public void testSartuTXT() {
-
 		assertTrue(FicheroDAT.sartuDAT());
-
 	}
 
 	@Test
 	public void testIrakuriTXT() throws ClassNotFoundException, IOException, InterruptedException {
-
 		assertTrue(FicheroTXT.irakurriTXT());
-
 	}
-	
-	@Test
-	public void testGetLibros(){
 
+	@Test
+	public void testGetLibros() {
 		assertEquals(Metodoak.MetodoLiburuak.Libros, Metodoak.MetodoLiburuak.getLibros());
-
 	}
 
 	@Test
-	public void testSetLibros(){
+	public void testIzenburua() {
+		String input = "Empire Burlesque";
+		InputStream in = new ByteArrayInputStream(input.getBytes());
+		System.setIn(in);
+		Scanner reader = new Scanner(System.in);
+		assertEquals(input, Metodoak.MetodoLiburuak.argitaletxea(false, reader));
+	}
 
-		assertTrue(Metodoak.MetodoLiburuak.setLibros(Metodoak.MetodoLiburuak.Libros));
-
+	@Test
+	public void testArgitaletxea() {
+		String input = "Iturribide";
+		InputStream in = new ByteArrayInputStream(input.getBytes());
+		System.setIn(in);
+		Scanner reader = new Scanner(System.in);
+		assertEquals(input, Metodoak.MetodoLiburuak.argitaletxea(false, reader));
 	}
 	
+	@Test
+	public void testOrrialdeak() {
+		String input = "12";
+		InputStream in = new ByteArrayInputStream(input.getBytes());
+		System.setIn(in);
+		Scanner reader = new Scanner(System.in);
+		assertEquals(input, Metodoak.MetodoLiburuak.orrialdeak(false, reader));
+	}
+	
+	@Test
+	public void testAltuera() {
+		String input = "12";
+		InputStream in = new ByteArrayInputStream(input.getBytes());
+		System.setIn(in);
+		Scanner reader = new Scanner(System.in);
+		assertEquals(input, Metodoak.MetodoLiburuak.altuera(false, reader));
+	}
+	
+	@Test
+	public void testOharrak() {
+		String input = "Bi ohar ditu";
+		InputStream in = new ByteArrayInputStream(input.getBytes());
+		System.setIn(in);
+		Scanner reader = new Scanner(System.in);
+		assertEquals(input, Metodoak.MetodoLiburuak.oharrak(false, reader));
+	}
+	
+	@Test
+	public void testISBN() {
+		String input = "0-596-52068-9";
+		InputStream in = new ByteArrayInputStream(input.getBytes());
+		System.setIn(in);
+		Scanner reader = new Scanner(System.in);
+		assertEquals(input, Metodoak.MetodoLiburuak.ISBN(false, reader));
+	}
+	
+	@Test
+	public void testGaiak() {
+		String input = "12";
+		InputStream in = new ByteArrayInputStream(input.getBytes());
+		System.setIn(in);
+		Scanner reader = new Scanner(System.in);
+		assertEquals(input, Metodoak.MetodoLiburuak.gaiak(false, reader));
+	}
+	
+	@Test
+	public void testKomprobatuTXT() {
+		assertEquals("", Ficheros.FicheroTXT.komprobatu(""));
+	}
+
+	@Test
+	public void testKomprobatuDOM() throws InterruptedException{
+		assertTrue(Ficheros.FicheroDOM.komprobatu(l));
+	}
+	
+	@Test
+	public void testKomprobatuDAT() {
+		assertEquals("", Ficheros.FicheroDAT.komprobatu(l));
+	}
 }
