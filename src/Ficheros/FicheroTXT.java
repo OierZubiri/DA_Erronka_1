@@ -66,7 +66,10 @@ public class FicheroTXT {
 	
 	// __________________________________________________________________________________________________________________//
 	
-	//Komprobatzeko ondo dagoen sartuta fitxeroan
+	//Komprobatzeko ondo dagoen sartuta fitxeroan. 
+	//Txarto badago daturen bat eskuz sartu duzulako, 0 bat jarriko dizu datuaren emaitzan.
+	//Adibidez --> Izenburua: 0
+	
 	public static String komprobatu(String l) {
 		int split=0;
 		Pattern pat = Pattern.compile(Metodoak.MetodoakPatroiak.izena);

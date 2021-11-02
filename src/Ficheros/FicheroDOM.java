@@ -171,8 +171,11 @@ public class FicheroDOM {
 	
 	// __________________________________________________________________________________________________________________//
 	
-	//Komprobatzeko ondo dagoen sartuta fitxeroan
-	public static void komprobatu(Liburua lib) throws InterruptedException {
+	//Komprobatzeko ondo dagoen sartuta fitxeroan. 
+	//Txarto badago daturen bat eskuz sartu duzulako, 0 bat jarriko dizu datuaren emaitzan.
+	//Adibidez --> Izenburua: 0
+	
+	public static boolean komprobatu(Liburua lib) throws InterruptedException {
 		System.out.println("\n" + "------------------------------------------------------");
 		Thread.sleep(100);
 		System.err.println("XML Fitxategia");
@@ -249,6 +252,6 @@ public class FicheroDOM {
 			e.printStackTrace();
 		}
 		Thread.sleep(1000); 
+		return true;
 	}
-
 }

@@ -68,7 +68,11 @@ public class TestGuztiak {
 
 	@Test
 	public void testIzenburua() {
-		assertTrue(Metodoak.MetodoLiburuak.setLibros(Metodoak.MetodoLiburuak.Libros));
+		String input = "Empire Burlesque";
+		InputStream in = new ByteArrayInputStream(input.getBytes());
+		System.setIn(in);
+		Scanner reader = new Scanner(System.in);
+		assertEquals(input, Metodoak.MetodoLiburuak.argitaletxea(false, reader));
 	}
 
 	@Test
@@ -125,5 +129,18 @@ public class TestGuztiak {
 		assertEquals(input, Metodoak.MetodoLiburuak.gaiak(false, reader));
 	}
 	
+	@Test
+	public void testKomprobatuTXT() {
+		assertEquals("", Ficheros.FicheroTXT.komprobatu(""));
+	}
+
+	@Test
+	public void testKomprobatuDOM() throws InterruptedException{
+		assertTrue(Ficheros.FicheroDOM.komprobatu(l));
+	}
 	
+	@Test
+	public void testKomprobatuDAT() {
+		assertEquals("", Ficheros.FicheroDAT.komprobatu(l));
+	}
 }

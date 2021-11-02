@@ -80,7 +80,10 @@ public class FicheroDAT {
 	
 	// __________________________________________________________________________________________________________________//
 	
-	//Komprobatzeko ondo dagoen sartuta fitxeroan
+	//Komprobatzeko ondo dagoen sartuta fitxeroan. 
+	//Txarto badago daturen bat eskuz sartu duzulako, 0 bat jarriko dizu datuaren emaitzan.
+	//Adibidez --> Izenburua: 0
+
 	public static String komprobatu(Liburua lib) {
 		Pattern pat = Pattern.compile(Metodoak.MetodoakPatroiak.izena);
 		Pattern pat1 = Pattern.compile(Metodoak.MetodoakPatroiak.texto);
