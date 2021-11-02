@@ -64,7 +64,7 @@ public class FicheroDAT {
 			while (fitxategia.getChannel().position() < fitxategia.getChannel().size()) {
 				System.out.println("------------------------------------------------------");
 				liburua = (Metodoak.Liburua) dataIS.readObject();
-				hartu(liburua);
+				komprobatu(liburua);
 				libros.add(liburua);
 				
 			}
@@ -78,8 +78,10 @@ public class FicheroDAT {
 		return true;
 	}
 	
-	public static String hartu(Liburua lib) {
-		int split=0;
+	// __________________________________________________________________________________________________________________//
+	
+	//Komprobatzeko ondo dagoen sartuta fitxeroan
+	public static String komprobatu(Liburua lib) {
 		Pattern pat = Pattern.compile(Metodoak.MetodoakPatroiak.izena);
 		Pattern pat1 = Pattern.compile(Metodoak.MetodoakPatroiak.texto);
 		Pattern pat2 = Pattern.compile(Metodoak.MetodoakPatroiak.ISBN);

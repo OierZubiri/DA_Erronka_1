@@ -49,11 +49,11 @@ public class Main {
 				zenbkiOna = true;
 				break;
 			case 3:
-				Metodoak.MetodoLiburuak.bilatuLiburua(sc);
-				zenbkiOna = false;
+				System.out.println("Lanean");
+				//Metodoak.MetodoLiburuak.bilatuLiburua(sc);
+				zenbkiOna = true;
 				break;
 			case 4:
-				
 				zenbkiOna = false;
 				break;
 			default:

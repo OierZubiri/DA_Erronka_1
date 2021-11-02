@@ -44,10 +44,10 @@ public class FicheroTXT {
 			String linea;
 
 			while ((linea = fichero.readLine()) != null) {
-				if(hartu(linea).equals("")) {
+				if(komprobatu(linea).equals("")) {
 					System.out.print(linea + " \n");
 				}else {
-					System.out.println(hartu(linea)+"0");
+					System.out.println(komprobatu(linea)+"0");
 				}
 			}
 				
@@ -64,7 +64,10 @@ public class FicheroTXT {
 		return true;
 	}
 	
-	public static String hartu(String l) {
+	// __________________________________________________________________________________________________________________//
+	
+	//Komprobatzeko ondo dagoen sartuta fitxeroan
+	public static String komprobatu(String l) {
 		int split=0;
 		Pattern pat = Pattern.compile(Metodoak.MetodoakPatroiak.izena);
 		Pattern pat1 = Pattern.compile(Metodoak.MetodoakPatroiak.texto);
