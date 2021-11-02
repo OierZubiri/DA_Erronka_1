@@ -3,6 +3,14 @@ Izenburua: Idk
 Argitaletxea: Idk
 Orrialdeak: 12
 Altuera: 12
-Oharrak: Idk
+Oharrak: 12
+ISBN: 0-596-52068-9
+Gaiak: 12
+------------------------------------------------------
+Izenburua: jo
+Argitaletxea: po
+Orrialdeak: 12
+Altuera: 12
+Oharrak: 12
 ISBN: 0-596-52068-9
 Gaiak: 12
