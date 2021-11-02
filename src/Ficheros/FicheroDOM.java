@@ -171,10 +171,6 @@ public class FicheroDOM {
 	
 	// __________________________________________________________________________________________________________________//
 	
-	//Komprobatzeko ondo dagoen sartuta fitxeroan. 
-	//Txarto badago daturen bat eskuz sartu duzulako, 0 bat jarriko dizu datuaren emaitzan.
-	//Adibidez --> Izenburua: 0
-	
 	public static boolean komprobatu(Liburua lib) throws InterruptedException {
 		System.out.println("\n" + "------------------------------------------------------");
 		Thread.sleep(100);
@@ -193,7 +189,7 @@ public class FicheroDOM {
 			if(mat.matches()==true) {
 				System.out.println("Izenburua: " + lib.getIzenburua());
 			}else {
-				lib.setIzenburua("0");
+				lib.setIzenburua("Datu desegokia.");
 				System.out.println("Izenburua: " +  lib.getIzenburua());
 			}
 			Pattern pat1 = Pattern.compile(Metodoak.MetodoakPatroiak.izena);
@@ -201,7 +197,7 @@ public class FicheroDOM {
 			if(mat1.matches()==true) {
 				System.out.println("Argitaletxea: " + lib.getArgitaletxea());
 			}else {
-				lib.setArgitaletxea("0");
+				lib.setArgitaletxea("Datu desegokia.");
 				System.out.println("Argitaletxea:"  +  lib.getArgitaletxea());
 			}
 			Pattern pat2 = Pattern.compile(Metodoak.MetodoakPatroiak.zenbakia);
@@ -209,7 +205,7 @@ public class FicheroDOM {
 			if(mat2.matches()==true) {
 				System.out.println("Orrialdeak: " + lib.getOrrialdeak());
 			}else {
-				lib.setOrrialdeak("0");
+				lib.setOrrialdeak("Datu desegokia.");
 				System.out.println("Orrialdeak: " + lib.getOrrialdeak());
 			}
 			Pattern pat3 = Pattern.compile(Metodoak.MetodoakPatroiak.zenbakia);
@@ -217,7 +213,7 @@ public class FicheroDOM {
 			if(mat3.matches()==true) {
 				System.out.println("Altuera: " + lib.getAltuera());
 			}else {
-				lib.setAltuera("0");
+				lib.setAltuera("Datu desegokia.");
 				System.out.println("Altuera: "+ lib.getAltuera());
 			}
 			Pattern pat4 = Pattern.compile(Metodoak.MetodoakPatroiak.texto);
@@ -225,7 +221,7 @@ public class FicheroDOM {
 			if(mat4.matches()==true) {
 				System.out.println("Oharrak: " + lib.getOharrak());
 			}else {
-				lib.setOharrak("0");
+				lib.setOharrak("Datu desegokia.");
 				System.out.println("Oharrak: " + lib.getOharrak());
 			}
 			Pattern pat5 = Pattern.compile(Metodoak.MetodoakPatroiak.ISBN);
@@ -233,7 +229,7 @@ public class FicheroDOM {
 			if(mat5.matches()==true) {
 				System.out.println("ISBN: " + lib.getISBN());
 			}else {
-				lib.setISBN("0");
+				lib.setISBN("Datu desegokia.");
 				System.out.println("ISBN: "+lib.getISBN());
 			}
 			Pattern pat6 = Pattern.compile(Metodoak.MetodoakPatroiak.zenbakia);
@@ -241,7 +237,7 @@ public class FicheroDOM {
 			if(mat6.matches()==true) {
 				System.out.println("Gaiak: " + lib.getGaiak());
 			}else {
-				lib.setGaiak("0");
+				lib.setGaiak("Datu desegokia.");
 				System.out.println("Gaiak: "+lib.getGaiak());
 			}
 		} catch (ParserConfigurationException e) {

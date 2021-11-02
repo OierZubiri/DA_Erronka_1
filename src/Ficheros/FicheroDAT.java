@@ -79,10 +79,6 @@ public class FicheroDAT {
 	}
 	
 	// __________________________________________________________________________________________________________________//
-	
-	//Komprobatzeko ondo dagoen sartuta fitxeroan. 
-	//Txarto badago daturen bat eskuz sartu duzulako, 0 bat jarriko dizu datuaren emaitzan.
-	//Adibidez --> Izenburua: 0
 
 	public static String komprobatu(Liburua lib) {
 		Pattern pat = Pattern.compile(Metodoak.MetodoakPatroiak.izena);
@@ -95,7 +91,7 @@ public class FicheroDAT {
 		if(mat.matches()==true) {
 			System.out.println("Izenburua: " + lib.getIzenburua());
 		}else {
-			lib.setIzenburua("0");
+			lib.setIzenburua("Datu desegokia.");
 			System.out.println("Izenburua: " +  lib.getIzenburua());
 		}
 		
@@ -103,7 +99,7 @@ public class FicheroDAT {
 		if(mat1.matches()==true) {
 			System.out.println("Argitaletxea: " + lib.getArgitaletxea());
 		}else {
-			lib.setArgitaletxea("0");
+			lib.setArgitaletxea("Datu desegokia.");
 			System.out.println("Argitaletxea:"  +  lib.getArgitaletxea());
 		}
 		
@@ -111,7 +107,7 @@ public class FicheroDAT {
 		if(mat2.matches()==true) {
 			System.out.println("Orrialdeak: " + lib.getOrrialdeak());
 		}else {
-			lib.setOrrialdeak("0");
+			lib.setOrrialdeak("Datu desegokia.");
 			System.out.println("Orrialdeak: " + lib.getOrrialdeak());
 		}
 		
@@ -119,7 +115,7 @@ public class FicheroDAT {
 		if(mat3.matches()==true) {
 			System.out.println("Altuera: " + lib.getAltuera());
 		}else {
-			lib.setAltuera("0");
+			lib.setAltuera("Datu desegokia.");
 			System.out.println("Altuera: "+ lib.getAltuera());
 		}
 		
@@ -127,7 +123,7 @@ public class FicheroDAT {
 		if(mat4.matches()==true) {
 			System.out.println("Oharrak: " + lib.getOharrak());
 		}else {
-			lib.setOharrak("0");
+			lib.setOharrak("Datu desegokia.");
 			System.out.println("Oharrak: " + lib.getOharrak());
 		}
 		
@@ -135,7 +131,7 @@ public class FicheroDAT {
 		if(mat5.matches()==true) {
 			System.out.println("ISBN: " + lib.getISBN());
 		}else {
-			lib.setISBN("0");
+			lib.setISBN("Datu desegokia.");
 			System.out.println("ISBN: "+lib.getISBN());
 		}
 		
@@ -143,7 +139,7 @@ public class FicheroDAT {
 		if(mat6.matches()==true) {
 			System.out.println("Gaiak: " + lib.getGaiak());
 		}else {
-			lib.setGaiak("0");
+			lib.setGaiak("Datu desegokia.");
 			System.out.println("Gaiak: "+lib.getGaiak());
 		}
 		return "";
