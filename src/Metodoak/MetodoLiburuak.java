@@ -5,6 +5,9 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import Ficheros.FicheroDAT;
+import Ficheros.FicheroDOM;
+
 public class MetodoLiburuak {
 
 	//***************************************************************************************************************************//
@@ -161,7 +164,7 @@ public class MetodoLiburuak {
 
 	//***************************************************************************************************************************//
 
-	/*public static boolean bilatuLiburua(Scanner sc) {
+	public static boolean bilatuLiburua(Scanner sc) {
 		boolean zenbkiOna = false;
 		String zbk;
 
@@ -213,26 +216,30 @@ public class MetodoLiburuak {
 		} while (zenbkiOna);
 		
 		return true;
-	}*/
+	}
 
 	//***************************************************************************************************************************//
 	
-	/*public static void aukera(String aukeratua, Scanner sc) {
-		String pat="";   
+	public static void aukera(String aukeratua, Scanner sc) {
+		String pat="";  
+		System.out.println("Esan "+aukeratua+":");
+		pat=sc.nextLine();
 		for(int i=0;i<Libros.size();i++) { 
-			System.err.println(aukeratua);
 			if(aukeratua.equals("Izenburua")) { 
-				System.out.println("Esan "+aukeratua+":");
-				pat=sc.nextLine();
+				
 				if(pat.equals(Libros.get(i).getIzenburua()))
 					try {
+						System.out.println(" ");
+						System.err.println("XML");
 						FicheroDOM.komprobatu(Libros.get(i));
+						System.out.println(" ");
+						System.err.println("DAT");
+						FicheroDAT.komprobatu(Libros.get(i));
 					} catch (InterruptedException e) { 
 						e.printStackTrace();
 					} 
 			} if(aukeratua.equals("Argitaletxea")) { 
-				System.out.println("Esan "+aukeratua+":");
-				pat=sc.nextLine();
+				
 				if(pat.equals(Libros.get(i).getArgitaletxea()))
 					try {
 						FicheroDOM.komprobatu(Libros.get(i));
@@ -240,8 +247,7 @@ public class MetodoLiburuak {
 						e.printStackTrace();
 					} 
 			} if(aukeratua.equals("Orrialdeak")) {
-				System.out.println("Esan "+aukeratua+":");
-				pat=sc.nextLine();
+				
 				if(pat.equals(Libros.get(i).getOrrialdeak()))
 					try {
 						FicheroDOM.komprobatu(Libros.get(i));
@@ -249,8 +255,7 @@ public class MetodoLiburuak {
 						e.printStackTrace();
 					} 
 			} if(aukeratua.equals("Altuera")) {
-				System.out.println("Esan "+aukeratua+":");
-				pat=sc.nextLine();
+				
 				if(pat.equals(Libros.get(i).getAltuera()))
 					try {
 						FicheroDOM.komprobatu(Libros.get(i));
@@ -258,8 +263,7 @@ public class MetodoLiburuak {
 						e.printStackTrace();
 					} 
 			} if(aukeratua.equals("Oharrak")) {
-				System.out.println("Esan "+aukeratua+":");
-				pat=sc.nextLine();
+				
 				if(pat.equals(Libros.get(i).getOharrak()))
 					try {
 						FicheroDOM.komprobatu(Libros.get(i));
@@ -267,8 +271,7 @@ public class MetodoLiburuak {
 						e.printStackTrace();
 					} 
 			} if(aukeratua.equals("ISBN")) {
-				System.out.println("Esan "+aukeratua+":");
-				pat=sc.nextLine();
+				
 				if(pat.equals(Libros.get(i).getISBN()))
 					try {
 						FicheroDOM.komprobatu(Libros.get(i));
@@ -276,8 +279,7 @@ public class MetodoLiburuak {
 						e.printStackTrace();
 					} 
 			} if(aukeratua.equals("Gaia")) {
-				System.out.println("Esan "+aukeratua+":");
-				pat=sc.nextLine();
+				
 				if(pat.equals(Libros.get(i).getGaiak()))
 					try {
 						FicheroDOM.komprobatu(Libros.get(i));
@@ -286,5 +288,5 @@ public class MetodoLiburuak {
 					} 
 			}
 		}
-	} */
+	}
 } 

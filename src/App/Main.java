@@ -49,8 +49,7 @@ public class Main {
 				zenbkiOna = true;
 				break;
 			case 3:
-				System.out.println("Lanean");
-				//Metodoak.MetodoLiburuak.bilatuLiburua(sc);
+				Metodoak.MetodoLiburuak.bilatuLiburua(sc);
 				zenbkiOna = true;
 				break;
 			case 4:
