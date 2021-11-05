@@ -9,6 +9,7 @@ import Ficheros.FicheroDAT;
 import Ficheros.FicheroDOM;
 import Ficheros.FicheroTXT;
 
+
 public class MetodoLiburuak {
 
 	//***************************************************************************************************************************//
@@ -165,11 +166,10 @@ public class MetodoLiburuak {
 
 	//***************************************************************************************************************************//
 
-	public static String bilatuLiburua(Scanner sc) throws InterruptedException {
+	public static boolean bilatuLiburua(Scanner sc) throws InterruptedException {
 		boolean zenbkiOna = false;
 		String zbk;
-		String aukera = "";
-		
+
 		do {
 			Pattern p = Pattern.compile(MetodoakPatroiak.zenbakiaBilatu);
 			do {
@@ -185,31 +185,31 @@ public class MetodoLiburuak {
 			switch (Integer.parseInt(zbk)) {
 
 			case 1: 
-				aukera = aukera("Izenburua",sc);
+				aukera("Izenburua",sc);
 				zenbkiOna = false;
 				break;
 			case 2: 
-				aukera =aukera("Argitaletxea",sc);
+				aukera("Argitaletxea",sc);
 				zenbkiOna = false;
 				break;
 			case 3:
-				aukera =aukera("Orrialdeak",sc);
+				aukera("Orrialdeak",sc);
 				zenbkiOna = false;
 				break;
 			case 4: 
-				aukera =aukera("Altuera",sc);
+				aukera("Altuera",sc);
 				zenbkiOna = false;
 				break;
 			case 5: 
-				aukera =aukera("Oharrak",sc);
+				aukera("Oharrak",sc);
 				zenbkiOna = false;
 				break;
 			case 6: 
-				aukera =aukera("ISBN",sc);
+				aukera("ISBN",sc);
 				zenbkiOna = false;
 				break;
 			case 7: 
-				aukera =aukera("Gaia",sc);
+				aukera("Gaia",sc);
 				zenbkiOna = false;
 				break;
 			default:
@@ -217,12 +217,12 @@ public class MetodoLiburuak {
 			}
 		} while (zenbkiOna);
 		
-		return aukera;
+		return true;
 	}
 
 	//***************************************************************************************************************************//
 	
-	public static String aukera(String aukeratua, Scanner sc) {
+	public static void aukera(String aukeratua, Scanner sc) throws InterruptedException {
 		String pat="";  
 		System.out.println("Esan "+aukeratua+":");
 		pat=sc.nextLine();
@@ -231,12 +231,13 @@ public class MetodoLiburuak {
 				
 				if(pat.equals(Libros.get(i).getIzenburua()))
 					try {
-						System.out.println(" ");
-						System.err.println("XML");
 						FicheroDOM.komprobatu(Libros.get(i));
-						System.out.println(" ");
+						Thread.sleep(1000);
+						System.out.println("------------------------------------------------------");
 						System.err.println("DAT");
+						System.out.println("------------------------------------------------------");
 						FicheroDAT.komprobatu(Libros.get(i));
+						Thread.sleep(1000);
 					} catch (InterruptedException e) { 
 						e.printStackTrace();
 					} 
@@ -244,13 +245,13 @@ public class MetodoLiburuak {
 				
 				if(pat.equals(Libros.get(i).getArgitaletxea()))
 					try {
-						System.out.println(" ");
-						System.err.println("XML");
 						FicheroDOM.komprobatu(Libros.get(i));
-						System.out.println(" ");
+						Thread.sleep(1000);
+						System.out.println("------------------------------------------------------");
 						System.err.println("DAT");
+						System.out.println("------------------------------------------------------");
 						FicheroDAT.komprobatu(Libros.get(i));
-						System.out.println(" ");
+						Thread.sleep(1000);
 					} catch (InterruptedException e) { 
 						e.printStackTrace();
 					} 
@@ -258,12 +259,13 @@ public class MetodoLiburuak {
 				
 				if(pat.equals(Libros.get(i).getOrrialdeak()))
 					try {
-						System.out.println(" ");
-						System.err.println("XML");
 						FicheroDOM.komprobatu(Libros.get(i));
-						System.out.println(" ");
+						Thread.sleep(1000);
+						System.out.println("------------------------------------------------------");
 						System.err.println("DAT");
+						System.out.println("------------------------------------------------------");
 						FicheroDAT.komprobatu(Libros.get(i));
+						Thread.sleep(1000);
 					} catch (InterruptedException e) { 
 						e.printStackTrace();
 					} 
@@ -271,12 +273,13 @@ public class MetodoLiburuak {
 				
 				if(pat.equals(Libros.get(i).getAltuera()))
 					try {
-						System.out.println(" ");
-						System.err.println("XML");
 						FicheroDOM.komprobatu(Libros.get(i));
-						System.out.println(" ");
+						Thread.sleep(1000);
+						System.out.println("------------------------------------------------------");
 						System.err.println("DAT");
+						System.out.println("------------------------------------------------------");
 						FicheroDAT.komprobatu(Libros.get(i));
+						Thread.sleep(1000);
 					} catch (InterruptedException e) { 
 						e.printStackTrace();
 					} 
@@ -284,12 +287,13 @@ public class MetodoLiburuak {
 				
 				if(pat.equals(Libros.get(i).getOharrak()))
 					try {
-						System.out.println(" ");
-						System.err.println("XML");
 						FicheroDOM.komprobatu(Libros.get(i));
-						System.out.println(" ");
+						Thread.sleep(1000);
+						System.out.println("------------------------------------------------------");
 						System.err.println("DAT");
+						System.out.println("------------------------------------------------------");
 						FicheroDAT.komprobatu(Libros.get(i));
+						Thread.sleep(1000);
 					} catch (InterruptedException e) { 
 						e.printStackTrace();
 					} 
@@ -297,12 +301,13 @@ public class MetodoLiburuak {
 				
 				if(pat.equals(Libros.get(i).getISBN()))
 					try {
-						System.out.println(" ");
-						System.err.println("XML");
 						FicheroDOM.komprobatu(Libros.get(i));
-						System.out.println(" ");
+						Thread.sleep(1000);
+						System.out.println("------------------------------------------------------");
 						System.err.println("DAT");
+						System.out.println("------------------------------------------------------");
 						FicheroDAT.komprobatu(Libros.get(i));
+						Thread.sleep(1000);
 					} catch (InterruptedException e) { 
 						e.printStackTrace();
 					} 
@@ -310,17 +315,19 @@ public class MetodoLiburuak {
 				
 				if(pat.equals(Libros.get(i).getGaiak()))
 					try {
-						System.out.println(" ");
-						System.err.println("XML");
 						FicheroDOM.komprobatu(Libros.get(i));
-						System.out.println(" ");
+						Thread.sleep(1000);
+						System.out.println("------------------------------------------------------");
 						System.err.println("DAT");
+						System.out.println("------------------------------------------------------");
 						FicheroDAT.komprobatu(Libros.get(i));
+						Thread.sleep(1000);
 					} catch (InterruptedException e) { 
 						e.printStackTrace();
 					} 
 			}
 		}
-		return pat;
+		Thread.sleep(1000);
+		FicheroTXT.bilatuTXT(pat);
 	}
 } 

@@ -155,8 +155,6 @@ public class FicheroTXT {
 	// __________________________________________________________________________________________________________________//
 
 		public static boolean bilatuTXT(String aukera) throws InterruptedException {
-			ArrayList<Liburua> libros = new ArrayList<>();
-
 			System.out.println("\n" + "------------------------------------------------------");
 			Thread.sleep(100);
 			System.err.println("TXT Fitxategia bilatu");
@@ -196,7 +194,6 @@ public class FicheroTXT {
 				System.out.println("Error de E/S ");
 			}
 
-			Metodoak.MetodoLiburuak.setLibros(libros);
 			Thread.sleep(1000);
 			return true;
 		}

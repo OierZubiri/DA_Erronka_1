@@ -50,8 +50,7 @@ public class Main {
 				zenbkiOna = true;
 				break;
 			case 3:
-				String pat = Metodoak.MetodoLiburuak.bilatuLiburua(sc);
-				Thread.sleep(2000);
+				Metodoak.MetodoLiburuak.bilatuLiburua(sc);
 				zenbkiOna = true;
 				break;
 			case 4:

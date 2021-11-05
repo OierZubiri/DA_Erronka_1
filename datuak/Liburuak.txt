@@ -14,3 +14,11 @@ Altuera: 12
 Oharrak: 12
 ISBN: 0-596-52068-9
 Gaiak: 12
+------------------------------------------------------
+Izenburua: pedro
+Argitaletxea: juan
+Orrialdeak: 12
+Altuera: 12
+Oharrak: hola
+ISBN: 0-596-52068-9
+Gaiak: 12
