@@ -8,6 +8,7 @@ import java.util.regex.Pattern;
 import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
 
+import Ficheros.FicheroTXT;
 import Metodoak.Liburua;
 import Metodoak.MetodoakPatroiak;
 
@@ -49,7 +50,8 @@ public class Main {
 				zenbkiOna = true;
 				break;
 			case 3:
-				Metodoak.MetodoLiburuak.bilatuLiburua(sc);
+				String pat = Metodoak.MetodoLiburuak.bilatuLiburua(sc);
+				Thread.sleep(2000);
 				zenbkiOna = true;
 				break;
 			case 4:

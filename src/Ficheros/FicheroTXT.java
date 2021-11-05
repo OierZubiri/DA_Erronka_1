@@ -152,4 +152,52 @@ public class FicheroTXT {
 		return "";
 	}
 
+	// __________________________________________________________________________________________________________________//
+
+		public static boolean bilatuTXT(String aukera) throws InterruptedException {
+			ArrayList<Liburua> libros = new ArrayList<>();
+
+			System.out.println("\n" + "------------------------------------------------------");
+			Thread.sleep(100);
+			System.err.println("TXT Fitxategia bilatu");
+
+			try {
+				File fic = new File("./datuak/Liburuak.txt");
+				BufferedReader fichero = new BufferedReader(new FileReader(fic));
+				String linea;
+
+				int zbk = 0;
+				boolean egokia = false;
+				String texto = "";
+				
+				while ((linea = fichero.readLine()) != null) {
+					if(komprobatu(linea).equals("")) {
+						texto += linea + " \n";
+						zbk++;
+						if(linea.contains(aukera)) {
+							egokia = true;
+						}
+						if(zbk == 8 && egokia == true) {
+							System.out.println(texto);
+						}
+						if(zbk == 8) {
+							texto = "";
+							egokia = false;
+							zbk = 0;
+						}
+					}
+				}
+					
+
+				fichero.close();
+			} catch (FileNotFoundException fn) {
+				System.out.println("No se encuentra el fichero");
+			} catch (IOException io) {
+				System.out.println("Error de E/S ");
+			}
+
+			Metodoak.MetodoLiburuak.setLibros(libros);
+			Thread.sleep(1000);
+			return true;
+		}
 }
