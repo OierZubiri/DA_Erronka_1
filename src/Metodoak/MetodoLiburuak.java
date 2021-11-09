@@ -226,108 +226,308 @@ public class MetodoLiburuak {
 		String pat="";  
 		System.out.println("Esan "+aukeratua+":");
 		pat=sc.nextLine();
+		int patam=pat.length();
 		for(int i=0;i<Libros.size();i++) { 
 			if(aukeratua.equals("Izenburua")) { 
-				
-				if(pat.equals(Libros.get(i).getIzenburua()))
+				String labur=Libros.get(i).getIzenburua().substring(0,patam);
+				if(pat.equals(Libros.get(i).getIzenburua())) {
 					try {
 						FicheroDOM.komprobatu(Libros.get(i));
 						Thread.sleep(1000);
-						System.out.println("------------------------------------------------------");
-						System.err.println("DAT");
-						System.out.println("------------------------------------------------------");
-						FicheroDAT.komprobatu(Libros.get(i));
-						Thread.sleep(1000);
+					
 					} catch (InterruptedException e) { 
 						e.printStackTrace();
 					} 
+				}else if(pat.equals(labur)) {
+					try {
+						FicheroDOM.komprobatu(Libros.get(i));
+						Thread.sleep(1000);
+					
+					} catch (InterruptedException e) { 
+						e.printStackTrace();
+					} 
+				}
 			} if(aukeratua.equals("Argitaletxea")) { 
-				
-				if(pat.equals(Libros.get(i).getArgitaletxea()))
+				String labur=Libros.get(i).getArgitaletxea().substring(0,patam);
+				if(pat.equals(Libros.get(i).getArgitaletxea())) {
 					try {
 						FicheroDOM.komprobatu(Libros.get(i));
 						Thread.sleep(1000);
-						System.out.println("------------------------------------------------------");
-						System.err.println("DAT");
-						System.out.println("------------------------------------------------------");
-						FicheroDAT.komprobatu(Libros.get(i));
-						Thread.sleep(1000);
+					
 					} catch (InterruptedException e) { 
 						e.printStackTrace();
 					} 
+				}else if(pat.equals(labur)) {
+					try {
+						FicheroDOM.komprobatu(Libros.get(i));
+						Thread.sleep(1000);
+					
+					} catch (InterruptedException e) { 
+						e.printStackTrace();
+					} 
+				}
 			} if(aukeratua.equals("Orrialdeak")) {
-				
-				if(pat.equals(Libros.get(i).getOrrialdeak()))
+				String labur=Libros.get(i).getArgitaletxea().substring(0,patam);
+				if(pat.equals(Libros.get(i).getOrrialdeak())) {
 					try {
 						FicheroDOM.komprobatu(Libros.get(i));
 						Thread.sleep(1000);
-						System.out.println("------------------------------------------------------");
-						System.err.println("DAT");
-						System.out.println("------------------------------------------------------");
-						FicheroDAT.komprobatu(Libros.get(i));
-						Thread.sleep(1000);
+					
 					} catch (InterruptedException e) { 
 						e.printStackTrace();
 					} 
+				}else if(pat.equals(labur)) {
+					try {
+						FicheroDOM.komprobatu(Libros.get(i));
+						Thread.sleep(1000);
+					
+					} catch (InterruptedException e) { 
+						e.printStackTrace();
+					} 
+				}
 			} if(aukeratua.equals("Altuera")) {
-				
-				if(pat.equals(Libros.get(i).getAltuera()))
+				String labur=Libros.get(i).getAltuera().substring(0,patam);
+				if(pat.equals(Libros.get(i).getAltuera())) {
 					try {
 						FicheroDOM.komprobatu(Libros.get(i));
 						Thread.sleep(1000);
-						System.out.println("------------------------------------------------------");
-						System.err.println("DAT");
-						System.out.println("------------------------------------------------------");
-						FicheroDAT.komprobatu(Libros.get(i));
-						Thread.sleep(1000);
+					
 					} catch (InterruptedException e) { 
 						e.printStackTrace();
 					} 
+				}else if(pat.equals(labur)) {
+					try {
+						FicheroDOM.komprobatu(Libros.get(i));
+						Thread.sleep(1000);
+					
+					} catch (InterruptedException e) { 
+						e.printStackTrace();
+					} 
+				}
 			} if(aukeratua.equals("Oharrak")) {
-				
-				if(pat.equals(Libros.get(i).getOharrak()))
+				String labur=Libros.get(i).getOharrak().substring(0,patam);
+				if(pat.equals(Libros.get(i).getOharrak())) {
 					try {
 						FicheroDOM.komprobatu(Libros.get(i));
 						Thread.sleep(1000);
-						System.out.println("------------------------------------------------------");
-						System.err.println("DAT");
-						System.out.println("------------------------------------------------------");
-						FicheroDAT.komprobatu(Libros.get(i));
-						Thread.sleep(1000);
+					
 					} catch (InterruptedException e) { 
 						e.printStackTrace();
 					} 
+				}else if(pat.equals(labur)) {
+					try {
+						FicheroDOM.komprobatu(Libros.get(i));
+						Thread.sleep(1000);
+					
+					} catch (InterruptedException e) { 
+						e.printStackTrace();
+					} 
+				}
 			} if(aukeratua.equals("ISBN")) {
-				
-				if(pat.equals(Libros.get(i).getISBN()))
+				String labur=Libros.get(i).getISBN().substring(0,patam);
+				if(pat.equals(Libros.get(i).getISBN())) {
 					try {
 						FicheroDOM.komprobatu(Libros.get(i));
 						Thread.sleep(1000);
-						System.out.println("------------------------------------------------------");
-						System.err.println("DAT");
-						System.out.println("------------------------------------------------------");
-						FicheroDAT.komprobatu(Libros.get(i));
-						Thread.sleep(1000);
+					
 					} catch (InterruptedException e) { 
 						e.printStackTrace();
 					} 
+				}else if(pat.equals(labur)) {
+					try {
+						FicheroDOM.komprobatu(Libros.get(i));
+						Thread.sleep(1000);
+					
+					} catch (InterruptedException e) { 
+						e.printStackTrace();
+					} 
+				}
 			} if(aukeratua.equals("Gaia")) {
-				
-				if(pat.equals(Libros.get(i).getGaiak()))
+				String labur=Libros.get(i).getGaiak().substring(0,patam);
+				if(pat.equals(Libros.get(i).getGaiak())) {
 					try {
 						FicheroDOM.komprobatu(Libros.get(i));
 						Thread.sleep(1000);
+					
+					} catch (InterruptedException e) { 
+						e.printStackTrace();
+					} 
+				}else if(pat.equals(labur)) {
+					try {
+						FicheroDOM.komprobatu(Libros.get(i));
+						Thread.sleep(1000);
+					
+					} catch (InterruptedException e) { 
+						e.printStackTrace();
+					} 
+				}
+		}
+		}
+		for(int j=0;j<Libros.size();j++) { 
+			if(aukeratua.equals("Izenburua")) { 
+				String labur=Libros.get(j).getIzenburua().substring(0,patam);
+				if(pat.equals(Libros.get(j).getIzenburua())) {
+					try {
 						System.out.println("------------------------------------------------------");
 						System.err.println("DAT");
 						System.out.println("------------------------------------------------------");
-						FicheroDAT.komprobatu(Libros.get(i));
+						FicheroDAT.komprobatu(Libros.get(j));
 						Thread.sleep(1000);
 					} catch (InterruptedException e) { 
 						e.printStackTrace();
 					} 
+				}else if(pat.equals(labur)) {
+					try {
+						System.out.println("------------------------------------------------------");
+						System.err.println("DAT");
+						System.out.println("------------------------------------------------------");
+						FicheroDAT.komprobatu(Libros.get(j));
+						Thread.sleep(1000);
+					} catch (InterruptedException e) { 
+						e.printStackTrace();
+					} 
+				}
+			} if(aukeratua.equals("Argitaletxea")) { 
+				String labur=Libros.get(j).getArgitaletxea().substring(0,patam);
+				if(pat.equals(Libros.get(j).getArgitaletxea())){
+					try {
+						System.out.println("------------------------------------------------------");
+						System.err.println("DAT");
+						System.out.println("------------------------------------------------------");
+						FicheroDAT.komprobatu(Libros.get(j));
+						Thread.sleep(1000);
+					} catch (InterruptedException e) { 
+						e.printStackTrace();
+					} 
+				}else if(pat.equals(labur)) {
+					try {
+						System.out.println("------------------------------------------------------");
+						System.err.println("DAT");
+						System.out.println("------------------------------------------------------");
+						FicheroDAT.komprobatu(Libros.get(j));
+						Thread.sleep(1000);
+					} catch (InterruptedException e) { 
+						e.printStackTrace();
+					} 
+				}
+			} if(aukeratua.equals("Orrialdeak")) {
+				String labur=Libros.get(j).getOrrialdeak().substring(0,patam);
+				if(pat.equals(Libros.get(j).getOrrialdeak())){
+					try {
+						System.out.println("------------------------------------------------------");
+						System.err.println("DAT");
+						System.out.println("------------------------------------------------------");
+						FicheroDAT.komprobatu(Libros.get(j));
+						Thread.sleep(1000);
+					} catch (InterruptedException e) { 
+						e.printStackTrace();
+					} 
+				}else if(pat.equals(labur)) {
+					try {
+						System.out.println("------------------------------------------------------");
+						System.err.println("DAT");
+						System.out.println("------------------------------------------------------");
+						FicheroDAT.komprobatu(Libros.get(j));
+						Thread.sleep(1000);
+					} catch (InterruptedException e) { 
+						e.printStackTrace();
+					} 
+				}
+			} if(aukeratua.equals("Altuera")) {
+				String labur=Libros.get(j).getAltuera().substring(0,patam);
+				if(pat.equals(Libros.get(j).getAltuera())){
+					try {
+						System.out.println("------------------------------------------------------");
+						System.err.println("DAT");
+						System.out.println("------------------------------------------------------");
+						FicheroDAT.komprobatu(Libros.get(j));
+						Thread.sleep(1000);
+					} catch (InterruptedException e) { 
+						e.printStackTrace();
+					} 
+				}else if(pat.equals(labur)) {
+					try {
+						System.out.println("------------------------------------------------------");
+						System.err.println("DAT");
+						System.out.println("------------------------------------------------------");
+						FicheroDAT.komprobatu(Libros.get(j));
+						Thread.sleep(1000);
+					} catch (InterruptedException e) { 
+						e.printStackTrace();
+					} 
+				}
+			} if(aukeratua.equals("Oharrak")) {
+				String labur=Libros.get(j).getOharrak().substring(0,patam);
+				if(pat.equals(Libros.get(j).getOharrak())){
+					try {
+						System.out.println("------------------------------------------------------");
+						System.err.println("DAT");
+						System.out.println("------------------------------------------------------");
+						FicheroDAT.komprobatu(Libros.get(j));
+						Thread.sleep(1000);
+					} catch (InterruptedException e) { 
+						e.printStackTrace();
+					} 
+				}else if(pat.equals(labur)) {
+					try {
+						System.out.println("------------------------------------------------------");
+						System.err.println("DAT");
+						System.out.println("------------------------------------------------------");
+						FicheroDAT.komprobatu(Libros.get(j));
+						Thread.sleep(1000);
+					} catch (InterruptedException e) { 
+						e.printStackTrace();
+					} 
+				}
+			} if(aukeratua.equals("ISBN")) {
+				String labur=Libros.get(j).getISBN().substring(0,patam);
+				if(pat.equals(Libros.get(j).getISBN())){
+					try {
+						System.out.println("------------------------------------------------------");
+						System.err.println("DAT");
+						System.out.println("------------------------------------------------------");
+						FicheroDAT.komprobatu(Libros.get(j));
+						Thread.sleep(1000);
+					} catch (InterruptedException e) { 
+						e.printStackTrace();
+					} 
+				}else if(pat.equals(labur)) {
+					try {
+						System.out.println("------------------------------------------------------");
+						System.err.println("DAT");
+						System.out.println("------------------------------------------------------");
+						FicheroDAT.komprobatu(Libros.get(j));
+						Thread.sleep(1000);
+					} catch (InterruptedException e) { 
+						e.printStackTrace();
+					} 
+				}
+			} if(aukeratua.equals("Gaia")) {
+				String labur=Libros.get(j).getGaiak().substring(0,patam);
+				if(pat.equals(Libros.get(j).getGaiak())){
+					try {
+						System.out.println("------------------------------------------------------");
+						System.err.println("DAT");
+						System.out.println("------------------------------------------------------");
+						FicheroDAT.komprobatu(Libros.get(j));
+						Thread.sleep(1000);
+					} catch (InterruptedException e) { 
+						e.printStackTrace();
+					} 
+				}else if(pat.equals(labur)) {
+					try {
+						System.out.println("------------------------------------------------------");
+						System.err.println("DAT");
+						System.out.println("------------------------------------------------------");
+						FicheroDAT.komprobatu(Libros.get(j));
+						Thread.sleep(1000);
+					} catch (InterruptedException e) { 
+						e.printStackTrace();
+					} 
+				}
 			}
 		}
 		Thread.sleep(1000);
 		FicheroTXT.bilatuTXT(pat);
 	}
-} 
+}
