@@ -154,7 +154,9 @@ public class FicheroTXT {
 
 	// __________________________________________________________________________________________________________________//
 
-		public static boolean bilatuTXT(String aukera) throws InterruptedException {
+		public static boolean bilatuTXT(String aukera, int lerroa) throws InterruptedException {
+			
+			
 			System.out.println("\n" + "------------------------------------------------------");
 			Thread.sleep(100);
 			System.err.println("TXT Fitxategia bilatu");
@@ -163,18 +165,25 @@ public class FicheroTXT {
 				File fic = new File("./datuak/Liburuak.txt");
 				BufferedReader fichero = new BufferedReader(new FileReader(fic));
 				String linea;
-
+				
 				int zbk = 0;
 				boolean egokia = false;
 				String texto = "";
 				
 				while ((linea = fichero.readLine()) != null) {
+					 int split = linea.indexOf(":");
+					 String s = linea.substring(split+1,(split+1)+(aukera.length()-3));
+					
 					if(komprobatu(linea).equals("")) {
 						texto += linea + " \n";
 						zbk++;
-						if(linea.contains(aukera)) {
+						if(s.equals(aukera)) {
+							 System.out.println("hola");
+							egokia=true;
+						}else if(linea.contains(aukera) && lerroa == zbk-1) {
 							egokia = true;
 						}
+						
 						if(zbk == 8 && egokia == true) {
 							System.out.println(texto);
 						}
