@@ -154,38 +154,54 @@ public class FicheroTXT {
 
 	// __________________________________________________________________________________________________________________//
 
-		public static boolean bilatuTXT(String aukera) throws InterruptedException {
+		public static boolean bilatuTXT(String aukera, int lineaElegida) throws InterruptedException {
 			System.out.println("\n" + "------------------------------------------------------");
 			Thread.sleep(100);
 			System.err.println("TXT Fitxategia bilatu");
-
+			
 			try {
 				File fic = new File("./datuak/Liburuak.txt");
 				BufferedReader fichero = new BufferedReader(new FileReader(fic));
 				String linea;
 
 				int zbk = 0;
+				int zbkEgo = 0;
 				boolean egokia = false;
 				String texto = "";
 				
 				while ((linea = fichero.readLine()) != null) {
+					
+					
 					if(komprobatu(linea).equals("")) {
 						texto += linea + " \n";
 						zbk++;
-						if(linea.contains(aukera)) {
-							egokia = true;
-						}
-						if(zbk == 8 && egokia == true) {
-							System.out.println(texto);
-						}
-						if(zbk == 8) {
-							texto = "";
-							egokia = false;
-							zbk = 0;
+						
+						if(!linea.contains("-")) {
+							String[] parts = linea.split(":");
+							String part = parts[1];
+						
+							if(part.contains(aukera) && lineaElegida == zbk-1) {
+								egokia = true;
+							}
+							
+							if(zbk == 8 && egokia == true) {
+								zbkEgo +=1;
+								System.out.println(texto);
+							}
+							
+							if(zbk == 8) {
+								texto = "";
+								egokia = false;
+								zbk = 0;
+							}	
 						}
 					}
 				}
-					
+				
+				if(texto.length() == 0 && zbkEgo == 0) {
+					System.out.println("------------------------------------------------------");
+					System.out.println("Ez dago");
+				}
 
 				fichero.close();
 			} catch (FileNotFoundException fn) {

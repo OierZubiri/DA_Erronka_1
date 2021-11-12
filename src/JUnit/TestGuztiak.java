@@ -146,7 +146,7 @@ public class TestGuztiak {
 
 	@Test
 	public void testBilatuTXT() throws InterruptedException{
-		assertTrue(Ficheros.FicheroTXT.bilatuTXT("hola"));
+		assertTrue(Ficheros.FicheroTXT.bilatuTXT("hola", 1));
 	}
 
 	@Test
