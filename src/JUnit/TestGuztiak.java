@@ -83,7 +83,7 @@ public class TestGuztiak {
 		Scanner reader = new Scanner(System.in);
 		assertEquals(input, Metodoak.MetodoLiburuak.argitaletxea(false, reader));
 	}
-	
+
 	@Test
 	public void testOrrialdeak() {
 		String input = "12";
@@ -92,7 +92,7 @@ public class TestGuztiak {
 		Scanner reader = new Scanner(System.in);
 		assertEquals(input, Metodoak.MetodoLiburuak.orrialdeak(false, reader));
 	}
-	
+
 	@Test
 	public void testAltuera() {
 		String input = "12";
@@ -101,7 +101,7 @@ public class TestGuztiak {
 		Scanner reader = new Scanner(System.in);
 		assertEquals(input, Metodoak.MetodoLiburuak.altuera(false, reader));
 	}
-	
+
 	@Test
 	public void testOharrak() {
 		String input = "Bi ohar ditu";
@@ -110,7 +110,7 @@ public class TestGuztiak {
 		Scanner reader = new Scanner(System.in);
 		assertEquals(input, Metodoak.MetodoLiburuak.oharrak(false, reader));
 	}
-	
+
 	@Test
 	public void testISBN() {
 		String input = "0-596-52068-9";
@@ -119,7 +119,7 @@ public class TestGuztiak {
 		Scanner reader = new Scanner(System.in);
 		assertEquals(input, Metodoak.MetodoLiburuak.ISBN(false, reader));
 	}
-	
+
 	@Test
 	public void testGaiak() {
 		String input = "12";
@@ -128,7 +128,7 @@ public class TestGuztiak {
 		Scanner reader = new Scanner(System.in);
 		assertEquals(input, Metodoak.MetodoLiburuak.gaiak(false, reader));
 	}
-	
+
 	@Test
 	public void testKomprobatuTXT() {
 		assertEquals("", Ficheros.FicheroTXT.komprobatu(""));
@@ -138,9 +138,32 @@ public class TestGuztiak {
 	public void testKomprobatuDOM() throws InterruptedException{
 		assertTrue(Ficheros.FicheroDOM.komprobatu(l));
 	}
-	
+
 	@Test
 	public void testKomprobatuDAT() {
 		assertEquals("", Ficheros.FicheroDAT.komprobatu(l));
+	}
+
+	@Test
+	public void testBilatuTXT() throws InterruptedException{
+		assertTrue(Ficheros.FicheroTXT.bilatuTXT("hola", 1));
+	}
+
+	@Test
+	public void testBilatuLiburua() throws InterruptedException {
+		String input = "1\nEmpire";
+		InputStream in = new ByteArrayInputStream(input.getBytes());
+		System.setIn(in);
+		Scanner reader = new Scanner(System.in);
+		assertTrue(Metodoak.MetodoLiburuak.bilatuLiburua(reader));
+	}
+
+	@Test
+	public void testAukera() throws InterruptedException {
+		String input = "Empire";
+		InputStream in = new ByteArrayInputStream(input.getBytes());
+		System.setIn(in);
+		Scanner reader = new Scanner(System.in);
+		assertTrue(Metodoak.MetodoLiburuak.aukera(input, reader));
 	}
 }

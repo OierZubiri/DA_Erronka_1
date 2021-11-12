@@ -83,7 +83,7 @@ public class FicheroDOM {
 
 	// __________________________________________________________________________________________________________________//
 
-	public static boolean irakurriDOM() throws InterruptedException {
+public static boolean irakurriDOM() throws InterruptedException {
 		
 		System.out.println("\n" + "------------------------------------------------------");
 		Thread.sleep(100);
