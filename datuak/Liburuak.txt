@@ -1,24 +1,24 @@
 ------------------------------------------------------
-Izenburua: javas
-Argitaletxea: 12
+Izenburua: joel
+Argitaletxea: lukas
 Orrialdeak: 12
 Altuera: 12
 Oharrak: 12
 ISBN: 0-596-52068-9
 Gaiak: 12
 ------------------------------------------------------
-Izenburua: javier
-Argitaletxea: 13
-Orrialdeak: 13
-Altuera: 13
-Oharrak: 13
+Izenburua: asier
+Argitaletxea: ayo
+Orrialdeak: 12
+Altuera: 12
+Oharrak: 12
 ISBN: 0-596-52068-9
-Gaiak: 13
+Gaiak: 12
 ------------------------------------------------------
-Izenburua: peter
-Argitaletxea: 11
-Orrialdeak: 11
-Altuera: 11
-Oharrak: 11
+Izenburua: unai
+Argitaletxea: lukas
+Orrialdeak: 12
+Altuera: 12
+Oharrak: 12
 ISBN: 0-596-52068-9
-Gaiak: 11
+Gaiak: 12
