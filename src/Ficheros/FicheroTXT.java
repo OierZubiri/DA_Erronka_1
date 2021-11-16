@@ -2,7 +2,6 @@ package Ficheros;
 
 import java.io.*;
 
-
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -16,8 +15,8 @@ public class FicheroTXT {
 	public static boolean sartuTXT() {
 		ArrayList<Liburua> Libros = Metodoak.MetodoLiburuak.getLibros();
 		try {
-			BufferedWriter fichero = new BufferedWriter(new FileWriter("./datuak/Liburuak.txt",true));
-			for (int i = Libros.size()-1; i < Libros.size(); i++) {
+			BufferedWriter fichero = new BufferedWriter(new FileWriter("./datuak/Liburuak.txt", true));
+			for (int i = Libros.size() - 1; i < Libros.size(); i++) {
 				fichero.write(Libros.get(i).toString());
 			}
 			fichero.close();
@@ -44,13 +43,12 @@ public class FicheroTXT {
 			String linea;
 
 			while ((linea = fichero.readLine()) != null) {
-				if(komprobatu(linea).equals("")) {
+				if (komprobatu(linea).equals("")) {
 					System.out.print(linea + " \n");
-				}else {
-					System.out.println(komprobatu(linea)+"Datu desegokia.");
+				} else {
+					System.out.println(komprobatu(linea) + "Datu desegokia.");
 				}
 			}
-				
 
 			fichero.close();
 		} catch (FileNotFoundException fn) {
@@ -63,154 +61,95 @@ public class FicheroTXT {
 		Thread.sleep(1000);
 		return true;
 	}
-	
+
 	// __________________________________________________________________________________________________________________//
-	
-	public static String komprobatu(String l) {
-		int split=0;
+
+	public static String komprobatu(String l) throws InterruptedException {
+		
+		int split = 0;
+		
 		Pattern pat = Pattern.compile(Metodoak.MetodoakPatroiak.izena);
 		Pattern pat1 = Pattern.compile(Metodoak.MetodoakPatroiak.texto);
 		Pattern pat2 = Pattern.compile(Metodoak.MetodoakPatroiak.ISBN);
 		Pattern pat3 = Pattern.compile(Metodoak.MetodoakPatroiak.zenbakia);
-		
-		if(l.contains("Izenburua:")) {
-			 split = l.indexOf(":");
-			 String s = l.substring(split+1);
-			 Matcher mat = pat.matcher(s);
-			 if(mat.matches()==true) {
-					return "";
-				}else {
-					return "Izenburua: ";
-				}
-		 }
-		
-		if(l.contains("Argitaletxea:")) {
-			 split = l.indexOf(":");
-			 String s = l.substring(split+1);
-			 Matcher mat = pat.matcher(s);
-			 if(mat.matches()==true) {
-					return "";
-				}else {
-					return "Argitaletxea: ";
-				}
-		 }
-		
-		if(l.contains("Orrialdeak:")) {
-			 split = l.indexOf(":");
-			 String s = l.substring(split+2);
-			 Matcher mat = pat3.matcher(s);
-			 if(mat.matches()==true) {
-					return "";
-				}else {
-					return "Orrialdeak: ";
-				}
-		 }
-		
-		if(l.contains("Altuera:")) {
-			 split = l.indexOf(":");
-			 String s = l.substring(split+2);
-			 Matcher mat = pat3.matcher(s);
-			 if(mat.matches()==true) {
-					return "";
-				}else {
-					return "Altuera: ";
-				}
-		 }
-		
-		if(l.contains("Oharrak:")) {
-			 split = l.indexOf(":");
-			 String s = l.substring(split+2);
-			 Matcher mat = pat1.matcher(s);
-			 if(mat.matches()==true) {
-					return "";
-				}else {
-					return "Oharrak: ";
-				}
-		 }
-		
-		if(l.contains("ISBN:")) {
-			 split = l.indexOf(":");
-			 String s = l.substring(split+2);
-			 Matcher mat = pat2.matcher(s);
-			 if(mat.matches()==true) {
-					return "";
-				}else {
-					return "ISBN: ";
-				}
-		 }
-		
-		if(l.contains("Gaiak:")) {
-			 split = l.indexOf(":");
-			 String s = l.substring(split+2);
-			 Matcher mat = pat3.matcher(s);
-			 if(mat.matches()==true) {
-					return "";
-				}else {
-					return "Gaiak: ";
-				}
-		 }
+
+		if (l.contains("Izenburua:")) {
+			split = l.indexOf(":");
+			String s = l.substring(split + 1);
+			Matcher mat = pat.matcher(s);
+			if (mat.matches() == true) {
+				return "";
+			} else {
+				return "Izenburua: ";
+			}
+		}
+
+		if (l.contains("Argitaletxea:")) {
+			split = l.indexOf(":");
+			String s = l.substring(split + 1);
+			Matcher mat = pat.matcher(s);
+			if (mat.matches() == true) {
+				return "";
+			} else {
+				return "Argitaletxea: ";
+			}
+		}
+
+		if (l.contains("Orrialdeak:")) {
+			split = l.indexOf(":");
+			String s = l.substring(split + 2);
+			Matcher mat = pat3.matcher(s);
+			if (mat.matches() == true) {
+				return "";
+			} else {
+				return "Orrialdeak: ";
+			}
+		}
+
+		if (l.contains("Altuera:")) {
+			split = l.indexOf(":");
+			String s = l.substring(split + 2);
+			Matcher mat = pat3.matcher(s);
+			if (mat.matches() == true) {
+				return "";
+			} else {
+				return "Altuera: ";
+			}
+		}
+
+		if (l.contains("Oharrak:")) {
+			split = l.indexOf(":");
+			String s = l.substring(split + 2);
+			Matcher mat = pat1.matcher(s);
+			if (mat.matches() == true) {
+				return "";
+			} else {
+				return "Oharrak: ";
+			}
+		}
+
+		if (l.contains("ISBN:")) {
+			split = l.indexOf(":");
+			String s = l.substring(split + 2);
+			Matcher mat = pat2.matcher(s);
+			if (mat.matches() == true) {
+				return "";
+			} else {
+				return "ISBN: ";
+			}
+		}
+
+		if (l.contains("Gaiak:")) {
+			split = l.indexOf(":");
+			String s = l.substring(split + 2);
+			Matcher mat = pat3.matcher(s);
+			if (mat.matches() == true) {
+				return "";
+			} else {
+				return "Gaiak: ";
+			}
+		}
+		Thread.sleep(1000);
 		return "";
 	}
-
-	// __________________________________________________________________________________________________________________//
-
-		public static boolean bilatuTXT(String aukera, int lineaElegida) throws InterruptedException {
-			System.out.println("\n" + "------------------------------------------------------");
-			Thread.sleep(100);
-			System.err.println("TXT Fitxategia bilatu");
-			
-			try {
-				File fic = new File("./datuak/Liburuak.txt");
-				BufferedReader fichero = new BufferedReader(new FileReader(fic));
-				String linea;
-
-				int zbk = 0;
-				int zbkEgo = 0;
-				boolean egokia = false;
-				String texto = "";
-				
-				while ((linea = fichero.readLine()) != null) {
-					
-					
-					if(komprobatu(linea).equals("")) {
-						texto += linea + " \n";
-						zbk++;
-						
-						if(!linea.contains("-")) {
-							String[] parts = linea.split(":");
-							String part = parts[1];
-						
-							if(part.contains(aukera) && lineaElegida == zbk-1) {
-								egokia = true;
-							}
-							
-							if(zbk == 8 && egokia == true) {
-								zbkEgo +=1;
-								System.out.println(texto);
-							}
-							
-							if(zbk == 8) {
-								texto = "";
-								egokia = false;
-								zbk = 0;
-							}	
-						}
-					}
-				}
-				
-				if(texto.length() == 0 && zbkEgo == 0) {
-					System.out.println("------------------------------------------------------");
-					System.out.println("Ez dago");
-				}
-
-				fichero.close();
-			} catch (FileNotFoundException fn) {
-				System.out.println("No se encuentra el fichero");
-			} catch (IOException io) {
-				System.out.println("Error de E/S ");
-			}
-
-			Thread.sleep(1000);
-			return true;
-		}
 }

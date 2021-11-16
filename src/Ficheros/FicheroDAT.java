@@ -80,7 +80,8 @@ public class FicheroDAT {
 	
 	// __________________________________________________________________________________________________________________//
 
-	public static String komprobatu(Liburua lib) {
+	public static boolean komprobatu(Liburua lib) throws InterruptedException {
+		
 		Pattern pat = Pattern.compile(Metodoak.MetodoakPatroiak.izena);
 		Pattern pat1 = Pattern.compile(Metodoak.MetodoakPatroiak.texto);
 		Pattern pat2 = Pattern.compile(Metodoak.MetodoakPatroiak.ISBN);
@@ -142,7 +143,8 @@ public class FicheroDAT {
 			lib.setGaiak("Datu desegokia.");
 			System.out.println("Gaiak: "+lib.getGaiak());
 		}
-		return "";
+		Thread.sleep(1000); 
+		return true;
 	}
 
 }

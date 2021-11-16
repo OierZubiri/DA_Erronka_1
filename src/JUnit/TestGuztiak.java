@@ -1,17 +1,13 @@
 package JUnit;
 
 import static org.junit.Assert.*;
-
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Scanner;
-
 import javax.xml.parsers.ParserConfigurationException;
-
 import org.junit.Test;
 import org.xml.sax.SAXException;
-
 import Ficheros.FicheroDAT;
 import Ficheros.FicheroDOM;
 import Ficheros.FicheroTXT;
@@ -72,7 +68,7 @@ public class TestGuztiak {
 		InputStream in = new ByteArrayInputStream(input.getBytes());
 		System.setIn(in);
 		Scanner reader = new Scanner(System.in);
-		assertEquals(input, Metodoak.MetodoLiburuak.argitaletxea(false, reader));
+		assertEquals(input, Metodoak.MetodoKomprobaketak.izenburua(false, reader));
 	}
 
 	@Test
@@ -81,7 +77,7 @@ public class TestGuztiak {
 		InputStream in = new ByteArrayInputStream(input.getBytes());
 		System.setIn(in);
 		Scanner reader = new Scanner(System.in);
-		assertEquals(input, Metodoak.MetodoLiburuak.argitaletxea(false, reader));
+		assertEquals(input, Metodoak.MetodoKomprobaketak.argitaletxea(false, reader));
 	}
 
 	@Test
@@ -90,7 +86,7 @@ public class TestGuztiak {
 		InputStream in = new ByteArrayInputStream(input.getBytes());
 		System.setIn(in);
 		Scanner reader = new Scanner(System.in);
-		assertEquals(input, Metodoak.MetodoLiburuak.orrialdeak(false, reader));
+		assertEquals(input, Metodoak.MetodoKomprobaketak.orrialdeak(false, reader));
 	}
 
 	@Test
@@ -99,7 +95,7 @@ public class TestGuztiak {
 		InputStream in = new ByteArrayInputStream(input.getBytes());
 		System.setIn(in);
 		Scanner reader = new Scanner(System.in);
-		assertEquals(input, Metodoak.MetodoLiburuak.altuera(false, reader));
+		assertEquals(input, Metodoak.MetodoKomprobaketak.altuera(false, reader));
 	}
 
 	@Test
@@ -108,7 +104,7 @@ public class TestGuztiak {
 		InputStream in = new ByteArrayInputStream(input.getBytes());
 		System.setIn(in);
 		Scanner reader = new Scanner(System.in);
-		assertEquals(input, Metodoak.MetodoLiburuak.oharrak(false, reader));
+		assertEquals(input, Metodoak.MetodoKomprobaketak.oharrak(false, reader));
 	}
 
 	@Test
@@ -117,7 +113,7 @@ public class TestGuztiak {
 		InputStream in = new ByteArrayInputStream(input.getBytes());
 		System.setIn(in);
 		Scanner reader = new Scanner(System.in);
-		assertEquals(input, Metodoak.MetodoLiburuak.ISBN(false, reader));
+		assertEquals(input, Metodoak.MetodoKomprobaketak.ISBN(false, reader));
 	}
 
 	@Test
@@ -126,11 +122,11 @@ public class TestGuztiak {
 		InputStream in = new ByteArrayInputStream(input.getBytes());
 		System.setIn(in);
 		Scanner reader = new Scanner(System.in);
-		assertEquals(input, Metodoak.MetodoLiburuak.gaiak(false, reader));
+		assertEquals(input, Metodoak.MetodoKomprobaketak.gaiak(false, reader));
 	}
 
 	@Test
-	public void testKomprobatuTXT() {
+	public void testKomprobatuTXT() throws InterruptedException {
 		assertEquals("", Ficheros.FicheroTXT.komprobatu(""));
 	}
 
@@ -140,13 +136,13 @@ public class TestGuztiak {
 	}
 
 	@Test
-	public void testKomprobatuDAT() {
-		assertEquals("", Ficheros.FicheroDAT.komprobatu(l));
+	public void testKomprobatuDAT() throws InterruptedException {
+		assertTrue(Ficheros.FicheroDAT.komprobatu(l));
 	}
 
 	@Test
 	public void testBilatuTXT() throws InterruptedException{
-		assertTrue(Ficheros.FicheroTXT.bilatuTXT("hola", 1));
+		assertTrue(Metodoak.MetodoakBilatu.bilatuTXT(1, "hola"));
 	}
 
 	@Test
@@ -155,7 +151,7 @@ public class TestGuztiak {
 		InputStream in = new ByteArrayInputStream(input.getBytes());
 		System.setIn(in);
 		Scanner reader = new Scanner(System.in);
-		assertTrue(Metodoak.MetodoLiburuak.bilatuLiburua(reader));
+		assertTrue(Metodoak.MetodoakBilatu.bilatuLiburua(reader));
 	}
 
 	@Test
@@ -164,6 +160,6 @@ public class TestGuztiak {
 		InputStream in = new ByteArrayInputStream(input.getBytes());
 		System.setIn(in);
 		Scanner reader = new Scanner(System.in);
-		assertTrue(Metodoak.MetodoLiburuak.aukera(input, reader));
+		assertTrue(Metodoak.MetodoakBilatu.aukera(input, 1,reader));
 	}
 }
