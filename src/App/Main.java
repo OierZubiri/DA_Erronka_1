@@ -10,6 +10,7 @@ import org.xml.sax.SAXException;
 
 import Metodoak.Liburua;
 import Metodoak.MetodoakPatroiak;
+import Metodoak.MetodoakPropietateak;
 
 public class Main {
 
@@ -43,6 +44,7 @@ public class Main {
 				zenbkiOna = true;
 				break;
 			case 2:
+				MetodoakPropietateak.baimenak();
 				Ficheros.FicheroDOM.irakurriDOM();
 				Ficheros.FicheroTXT.irakurriTXT();
 				Ficheros.FicheroDAT.irakurriDAT();
