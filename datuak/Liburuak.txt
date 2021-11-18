@@ -30,3 +30,11 @@ Altuera: 17
 Oharrak: 17
 ISBN: 0-596-52068-9
 Gaiak: 17
+------------------------------------------------------
+Izenburua: juan
+Argitaletxea: e
+Orrialdeak: 12
+Altuera: 12
+Oharrak: 12
+ISBN: 0-596-52068-9
+Gaiak: 12

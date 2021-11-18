@@ -25,7 +25,7 @@ public class Main {
 			Pattern p = Pattern.compile(MetodoakPatroiak.zenbakiaMenua);
 			do {
 				zenbkiOna = true;
-				System.out.println("\n1 --> Gehitu\n" + "2 --> Irakurri\n" + "3 --> Liburu bilatu\n" + "4 --> Atera");
+				System.out.println("\n1 --> Gehitu\n" + "2 --> Irakurri\n" + "3 --> Liburu bilatu\n" + "4 --> Fitztegien propietateak\n" + "5 --> Pagina de libros\n" + "6 --> Atera");
 				zbk = sc.nextLine();
 				Matcher m = p.matcher(zbk);
 				if (m.matches())
@@ -44,7 +44,6 @@ public class Main {
 				zenbkiOna = true;
 				break;
 			case 2:
-				MetodoakPropietateak.baimenak();
 				Ficheros.FicheroDOM.irakurriDOM();
 				Ficheros.FicheroTXT.irakurriTXT();
 				Ficheros.FicheroDAT.irakurriDAT();
@@ -55,10 +54,18 @@ public class Main {
 				zenbkiOna = true;
 				break;
 			case 4:
+				Metodoak.MetodoakPropietateak.fitzpropietateak(sc);
+				zenbkiOna = true;
+				break;
+			case 5:
+				Metodoak.MetodoEnlace.enlace();
+				zenbkiOna = true;
+				break;
+			case 6:
 				zenbkiOna = false;
 				break;
 			default:
-				System.out.println("Sartu 1 eta 4 artean egin behar da");
+				System.out.println("Sartu 1 eta 5 artean egin behar da");
 			}
 		} while (zenbkiOna);
 	}
