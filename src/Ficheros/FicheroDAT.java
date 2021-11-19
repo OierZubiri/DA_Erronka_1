@@ -16,6 +16,7 @@ import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 import Metodoak.Liburua;
+import Metodoak.MetodoakRuta;
 
 public class FicheroDAT {
 
@@ -23,7 +24,8 @@ public class FicheroDAT {
 
 	public static boolean sartuDAT() {
 		ArrayList<Liburua> Libros = Metodoak.MetodoLiburuak.getLibros();
-		File fitxeroa = new File("./datuak/Liburuak.dat");
+		MetodoakRuta.bilatuFitxeroa("Liburuak.dat");
+		File fitxeroa = new File(MetodoakRuta.ruta+"/Liburuak.dat");
 		FileOutputStream fitxategia;
 		ObjectOutputStream dataIS;
 
@@ -50,7 +52,8 @@ public class FicheroDAT {
 	public static boolean irakurriDAT() throws IOException, ClassNotFoundException, InterruptedException {
 		ArrayList<Liburua> libros = new ArrayList<>();
 		Metodoak.Liburua liburua;
-		File fitxeroa = new File("./datuak/Liburuak.dat");
+		MetodoakRuta.bilatuFitxeroa("Liburuak.dat");
+		File fitxeroa = new File(MetodoakRuta.ruta+"/Liburuak.dat");
 		FileInputStream fitxategia;
 		ObjectInputStream dataIS;
 		
@@ -80,7 +83,8 @@ public class FicheroDAT {
 	
 	// __________________________________________________________________________________________________________________//
 
-	public static String komprobatu(Liburua lib) {
+	public static boolean komprobatu(Liburua lib) throws InterruptedException {
+		
 		Pattern pat = Pattern.compile(Metodoak.MetodoakPatroiak.izena);
 		Pattern pat1 = Pattern.compile(Metodoak.MetodoakPatroiak.texto);
 		Pattern pat2 = Pattern.compile(Metodoak.MetodoakPatroiak.ISBN);
@@ -142,7 +146,8 @@ public class FicheroDAT {
 			lib.setGaiak("Datu desegokia.");
 			System.out.println("Gaiak: "+lib.getGaiak());
 		}
-		return "";
+		Thread.sleep(1000); 
+		return true;
 	}
 
 }
