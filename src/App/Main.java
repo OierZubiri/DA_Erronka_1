@@ -4,25 +4,27 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
 
-import Metodoak.Liburua;
-import Metodoak.MetodoakPatroiak;
-import Metodoak.MetodoakPropietateak;
 
 public class Main {
 
+	static String fitxeroKokapena = "";
+	static String fitxeroXmlKokapena = "";
+	static String fitxeroDatKokapena = "";
+	
 	public static void main(String[] args) throws ClassNotFoundException, IOException, ParserConfigurationException,
 			SAXException, InterruptedException {
 
+		
+		
 		Scanner sc = new Scanner(System.in);
 		boolean zenbkiOna = false;
 		String zbk;
 
 		do {
-			Pattern p = Pattern.compile(MetodoakPatroiak.zenbakiaMenua);
+			Pattern p = Pattern.compile(Metodoak.MetodoakPatroiak.zenbakiaMenua);
 			do {
 				zenbkiOna = true;
 				System.out.println("\n1 --> Gehitu\n" + "2 --> Irakurri\n" + "3 --> Liburu bilatu\n" + "4 --> Fitztegien propietateak\n" + "5 --> Pagina de libros\n" + "6 --> Atera");
@@ -35,7 +37,7 @@ public class Main {
 			switch (Integer.parseInt(zbk)) {
 
 			case 1:
-				Liburua l1 = Metodoak.MetodoLiburuak.gehituLiburu(sc);
+				Metodoak.Liburua l1 = Metodoak.MetodoLiburuak.gehituLiburu(sc);
 				Metodoak.MetodoLiburuak.sartutakoLiburua(l1);
 				Metodoak.MetodoLiburuak.Libros.add(l1);
 				Ficheros.FicheroDOM.sartuDOM(l1);
@@ -65,7 +67,7 @@ public class Main {
 				zenbkiOna = false;
 				break;
 			default:
-				System.out.println("Sartu 1 eta 5 artean egin behar da");
+				System.out.println("Sartu 1 eta 6 artean egin behar da");
 			}
 		} while (zenbkiOna);
 	}

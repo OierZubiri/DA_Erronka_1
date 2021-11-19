@@ -87,7 +87,7 @@ public class MetodoakBilatu {
 
 	// __________________________________________________________________________________________________________________//
 
-	public static void bilatuDOM(String lineaElegida, String aukera) throws InterruptedException {
+	public static boolean bilatuDOM(String lineaElegida, String aukera) throws InterruptedException {
 		for (int i = 0; i < Metodoak.MetodoLiburuak.Libros.size(); i++) {
 			if (lineaElegida.equals("Izenburua")) {
 				if (aukera.equals(Metodoak.MetodoLiburuak.Libros.get(i).getIzenburua())
@@ -132,11 +132,12 @@ public class MetodoakBilatu {
 				}
 			}
 		}
+		return true;
 	}
 
 	// __________________________________________________________________________________________________________________//
 
-	public static void bilatuDAT(String lineaElegida, String aukera) throws InterruptedException {
+	public static boolean bilatuDAT(String lineaElegida, String aukera) throws InterruptedException {
 		for (int i = 0; i < Metodoak.MetodoLiburuak.Libros.size(); i++) {
 			if (lineaElegida.equals("Izenburua")) {
 				if (aukera.equals(Metodoak.MetodoLiburuak.Libros.get(i).getIzenburua())
@@ -181,6 +182,7 @@ public class MetodoakBilatu {
 				}
 			}
 		}
+		return true;
 	}
 
 	// __________________________________________________________________________________________________________________//
@@ -236,23 +238,25 @@ public class MetodoakBilatu {
 
 	// __________________________________________________________________________________________________________________//
 
-	public static void marraztuLiburuaDOM(int i) throws InterruptedException {
+	public static boolean marraztuLiburuaDOM(int i) throws InterruptedException {
 		System.out.println("\n" + "------------------------------------------------------");
 		Thread.sleep(100);
 		System.err.println("Bilatzailea XML");
 		Thread.sleep(100);
 		System.out.println("------------------------------------------------------");
 		FicheroDOM.komprobatu(Metodoak.MetodoLiburuak.Libros.get(i));
+		return true;
 	}
 
 	// __________________________________________________________________________________________________________________//
 
-	public static void marraztuLiburuaDAT(int i) throws InterruptedException {
+	public static boolean marraztuLiburuaDAT(int i) throws InterruptedException {
 		System.out.println("\n" + "------------------------------------------------------");
 		Thread.sleep(100);
 		System.err.println("Bilatzailea DAT");
 		Thread.sleep(100);
 		System.out.println("------------------------------------------------------");
 		FicheroDAT.komprobatu(Metodoak.MetodoLiburuak.Libros.get(i));
+		return true;
 	}
 }
