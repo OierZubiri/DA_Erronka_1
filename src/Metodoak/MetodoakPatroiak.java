@@ -8,6 +8,7 @@ public class MetodoakPatroiak {
 	public static String zenbakiaMenua = "([1-6]){1}";
 	public static String zenbakiaBilatu = "([1-7]){1}";
 	public static String zenbakiaFitxeroa = "([1-4]){1}";
+	public static String zenbakiaProp = "([1-2]){1}";
 }
 
 

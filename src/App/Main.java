@@ -4,40 +4,40 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
 
+import Metodoak.Liburua;
+import Metodoak.MetodoEnlace;
+import Metodoak.MetodoakPatroiak;
+import Metodoak.MetodoakPropietateak;
 
 public class Main {
 
-	static String fitxeroKokapena = "";
-	static String fitxeroXmlKokapena = "";
-	static String fitxeroDatKokapena = "";
-	
 	public static void main(String[] args) throws ClassNotFoundException, IOException, ParserConfigurationException,
-			SAXException, InterruptedException {
+	SAXException, InterruptedException {
 
-		
-		
 		Scanner sc = new Scanner(System.in);
 		boolean zenbkiOna = false;
-		String zbk;
+		String zbk = "";
 
 		do {
-			Pattern p = Pattern.compile(Metodoak.MetodoakPatroiak.zenbakiaMenua);
+			Pattern p = Pattern.compile(MetodoakPatroiak.zenbakiaMenua);
 			do {
-				zenbkiOna = true;
-				System.out.println("\n1 --> Gehitu\n" + "2 --> Irakurri\n" + "3 --> Liburu bilatu\n" + "4 --> Fitztegien propietateak\n" + "5 --> Pagina de libros\n" + "6 --> Atera");
-				zbk = sc.nextLine();
+				zenbkiOna = true; 
+				System.out.println("\n1 --> Gehitu\n" + "2 --> Irakurri\n" + "3 --> Liburu bilatu\n" + "4 --> Fitxategien kokapena aldatu\n"
+						+ "5 --> Online liburuak\n" +"6 --> Atera");
+				zbk = sc.nextLine(); 
 				Matcher m = p.matcher(zbk);
-				if (m.matches())
+				if(m.matches())
 					zenbkiOna = false;
 			} while (zenbkiOna);
 
 			switch (Integer.parseInt(zbk)) {
 
 			case 1:
-				Metodoak.Liburua l1 = Metodoak.MetodoLiburuak.gehituLiburu(sc);
+				Liburua l1 = Metodoak.MetodoLiburuak.gehituLiburu(sc);
 				Metodoak.MetodoLiburuak.sartutakoLiburua(l1);
 				Metodoak.MetodoLiburuak.Libros.add(l1);
 				Ficheros.FicheroDOM.sartuDOM(l1);
@@ -56,11 +56,11 @@ public class Main {
 				zenbkiOna = true;
 				break;
 			case 4:
-				Metodoak.MetodoakPropietateak.fitzpropietateak(sc);
+				MetodoakPropietateak.fitzpropietateak(sc);
 				zenbkiOna = true;
 				break;
 			case 5:
-				Metodoak.MetodoEnlace.enlace();
+				MetodoEnlace.enlace();
 				zenbkiOna = true;
 				break;
 			case 6:

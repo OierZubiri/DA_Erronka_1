@@ -7,6 +7,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import Metodoak.Liburua;
+import Metodoak.MetodoakRuta;
 
 public class FicheroTXT {
 
@@ -14,8 +15,9 @@ public class FicheroTXT {
 
 	public static boolean sartuTXT() {
 		ArrayList<Liburua> Libros = Metodoak.MetodoLiburuak.getLibros();
+		MetodoakRuta.bilatuFitxeroa("Liburuak.txt");
 		try {
-			BufferedWriter fichero = new BufferedWriter(new FileWriter("./datuak/Liburuak.txt", true));
+			BufferedWriter fichero = new BufferedWriter(new FileWriter(MetodoakRuta.ruta+"/Liburuak.txt", true));
 			for (int i = Libros.size() - 1; i < Libros.size(); i++) {
 				fichero.write(Libros.get(i).toString());
 			}
@@ -36,9 +38,9 @@ public class FicheroTXT {
 		System.out.println("\n" + "------------------------------------------------------");
 		Thread.sleep(100);
 		System.err.println("TXT Fitxategia");
-
+		MetodoakRuta.bilatuFitxeroa("Liburuak.txt");
 		try {
-			File fic = new File("./datuak/Liburuak.txt");
+			File fic = new File(MetodoakRuta.ruta+"/Liburuak.txt");
 			BufferedReader fichero = new BufferedReader(new FileReader(fic));
 			String linea;
 

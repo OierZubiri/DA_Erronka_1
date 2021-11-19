@@ -16,6 +16,7 @@ import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 import Metodoak.Liburua;
+import Metodoak.MetodoakRuta;
 
 public class FicheroDAT {
 
@@ -23,7 +24,8 @@ public class FicheroDAT {
 
 	public static boolean sartuDAT() {
 		ArrayList<Liburua> Libros = Metodoak.MetodoLiburuak.getLibros();
-		File fitxeroa = new File("./datuak/Liburuak.dat");
+		MetodoakRuta.bilatuFitxeroa("Liburuak.dat");
+		File fitxeroa = new File(MetodoakRuta.ruta+"/Liburuak.dat");
 		FileOutputStream fitxategia;
 		ObjectOutputStream dataIS;
 
@@ -50,7 +52,8 @@ public class FicheroDAT {
 	public static boolean irakurriDAT() throws IOException, ClassNotFoundException, InterruptedException {
 		ArrayList<Liburua> libros = new ArrayList<>();
 		Metodoak.Liburua liburua;
-		File fitxeroa = new File("./datuak/Liburuak.dat");
+		MetodoakRuta.bilatuFitxeroa("Liburuak.dat");
+		File fitxeroa = new File(MetodoakRuta.ruta+"/Liburuak.dat");
 		FileInputStream fitxategia;
 		ObjectInputStream dataIS;
 		

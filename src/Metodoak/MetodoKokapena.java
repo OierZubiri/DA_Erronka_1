@@ -11,18 +11,15 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MetodoKokapena {
-
-	private static String ruta;
-
 	// __________________________________________________________________________________________________________________//
-	
+
 	public static boolean fitxeroAukeratu(Scanner sc) throws IOException {
 		boolean aukeraOna = false;
 		Pattern p = Pattern.compile(MetodoakPatroiak.zenbakiaFitxeroa);
 		String zbk = "";
 		do {
 			System.out.println("Aukeratu mugitu nahi duzun fitxategia\n" + "1 --> Liburuak.txt\n"
-					+ "2 --> Liburuak.dat\n" + "3 --> Liburuak.xml");
+					+ "2 --> Liburuak.xml\n" + "3 --> Liburuak.dat");
 			zbk = sc.nextLine();
 			Matcher m = p.matcher(zbk);
 			if (m.matches())
@@ -33,20 +30,20 @@ public class MetodoKokapena {
 	}
 
 	// __________________________________________________________________________________________________________________//
-	
+
 	public static boolean kokapenaAldatu(Scanner sc, String zbk) throws IOException {
 
 		switch (Integer.parseInt(zbk)) {
 		case 1:
-			bilatuFitxeroa("Liburuak.txt");
+			MetodoakRuta.bilatuFitxeroa("Liburuak.txt");
 			fitxeroak(sc, "/Liburuak.txt");
 			break;
 		case 2:
-			bilatuFitxeroa("Liburuak.xml");
+			MetodoakRuta.bilatuFitxeroa("Liburuak.xml");
 			fitxeroak(sc, "/Liburuak.xml");
 			break;
 		case 3:
-			bilatuFitxeroa("Liburuak.dat");
+			MetodoakRuta.bilatuFitxeroa("Liburuak.dat");
 			fitxeroak(sc, "/Liburuak.dat");
 			break;
 		}
@@ -54,7 +51,7 @@ public class MetodoKokapena {
 	}
 
 	// __________________________________________________________________________________________________________________//
-	
+
 	public static boolean fitxeroak(Scanner sc, String aukera) throws IOException {
 		boolean ondo = false;
 
@@ -74,20 +71,25 @@ public class MetodoKokapena {
 			} else {
 
 				try {
-					File fic = new File(ruta+aukera);
+					File fic = new File(MetodoakRuta.ruta+aukera);
 					BufferedReader fichero = new BufferedReader(new FileReader(fic));
 					String linea;
 					while ((linea = fichero.readLine()) != null) {
 						testua = testua + linea + " \n";
 					}
 					fichero.close();
-
+ 
+					
 					String sPath = File.separator + newDirectoryName + File.separator + aukera;
 
+					if(!(newDirectoryName).equalsIgnoreCase(MetodoakRuta.ruta)) {
 					BufferedWriter fichero1 = new BufferedWriter(new FileWriter(sPath));
 					fichero1.write(testua);
 					fichero1.close();
 					fic.delete();
+					}else {
+						System.out.println("Fitxeroa ruta horretan dago");
+					}
 					ondo = true;
 				} catch (IOException e) {
 					e.printStackTrace();
@@ -98,35 +100,4 @@ public class MetodoKokapena {
 		return true;
 	}
 
-	// __________________________________________________________________________________________________________________//
-	
-	public static boolean bilatuFitxeroa(String name) {
-
-		findFile(name, new File(System.getProperty("user.home") + "/desktop"));
-
-		return true;
-	}
-
-	// __________________________________________________________________________________________________________________//
-	
-	public static boolean findFile(String name, File file) {
-
-		File[] list = file.listFiles();
-		if (list != null)
-			for (File fil : list) {
-				if (fil.isDirectory()) {
-					findFile(name, fil);
-				} else if (name.equalsIgnoreCase(fil.getName())) {
-					guardarRuta(fil.getParentFile().toString());
-				}
-			}
-		return true;
-	}
-
-	// __________________________________________________________________________________________________________________//
-	
-	public static boolean guardarRuta(String rutaDefinitiva) {
-		ruta = rutaDefinitiva;
-		return true;
-	}
 }

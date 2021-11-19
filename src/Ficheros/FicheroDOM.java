@@ -21,6 +21,7 @@ import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
 import Metodoak.Liburua;
+import Metodoak.MetodoakRuta;
 
 public class FicheroDOM {
 
@@ -30,7 +31,8 @@ public class FicheroDOM {
 
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-		Document doc = dBuilder.parse("./datuak/Liburuak.xml");
+		MetodoakRuta.bilatuFitxeroa("Liburuak.xml");
+		Document doc = dBuilder.parse(MetodoakRuta.ruta+"/Liburuak.xml");
 
 		try {
 			Element elementoRaiz = doc.getDocumentElement();
@@ -71,7 +73,7 @@ public class FicheroDOM {
 
 			DOMSource source = new DOMSource(doc);
 
-			StreamResult result = new StreamResult("./datuak/Liburuak.xml");
+			StreamResult result = new StreamResult(MetodoakRuta.ruta+"/Liburuak.xml");
 
 			transformer.transform(source, result);
 
@@ -88,12 +90,13 @@ public class FicheroDOM {
 		System.out.println("\n" + "------------------------------------------------------");
 		Thread.sleep(100);
 		System.err.println("XML Fitxategia");
+		MetodoakRuta.bilatuFitxeroa("Liburuak.xml");
 		
 		try {
 			SAXParserFactory factory = SAXParserFactory.newInstance();
 			MiHandler miHandler = new MiHandler();
 			SAXParser parser = factory.newSAXParser();
-			parser.parse("./datuak/Liburuak.xml", miHandler);
+			parser.parse(MetodoakRuta.ruta+"/Liburuak.xml", miHandler);
 			ArrayList<Liburua> Libros = miHandler.obtenerLiburu();
 
 			for (Liburua lib : Libros) {
@@ -122,11 +125,13 @@ public class FicheroDOM {
 		Pattern pat2 = Pattern.compile(Metodoak.MetodoakPatroiak.ISBN);
 		Pattern pat3 = Pattern.compile(Metodoak.MetodoakPatroiak.zenbakia);
 		
+		MetodoakRuta.bilatuFitxeroa("Liburuak.xml");
+		
 		try {
 			SAXParserFactory factory = SAXParserFactory.newInstance();
 			MiHandler miHandler = new MiHandler();
 			SAXParser parser = factory.newSAXParser();
-			parser.parse("./datuak/Liburuak.xml", miHandler);
+			parser.parse(MetodoakRuta.ruta+"/Liburuak.xml", miHandler);
 
 			Matcher mat = pat.matcher(lib.getIzenburua());
 			if(mat.matches()==true) {

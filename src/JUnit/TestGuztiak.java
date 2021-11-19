@@ -163,21 +163,4 @@ public class TestGuztiak {
 		Scanner reader = new Scanner(System.in);
 		assertTrue(Metodoak.MetodoakBilatu.aukera(input, 1,reader));
 	}
-
-	
-	@Test
-	public void bilatuFitxeroa() throws IOException {
-		assertTrue(Metodoak.MetodoKokapena.bilatuFitxeroa(""));
-	}
-	
-	@Test
-	public void findFile() throws IOException {
-		
-		assertTrue(Metodoak.MetodoKokapena.findFile("/Liburuak.xml", new File(System.getProperty("user.home") + "/desktop")));
-	}
-	
-	@Test
-	public void guardarRuta() throws IOException {
-		assertTrue(Metodoak.MetodoKokapena.guardarRuta(""));
-	}
 }
