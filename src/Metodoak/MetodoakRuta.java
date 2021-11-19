@@ -10,16 +10,14 @@ public class MetodoakRuta {
 
 	public static boolean bilatuFitxeroa(String name) {
 		File file;
-
-		File fi = new File("C:\\Aldapena");
 		
 		if(System.getProperty("os.name").equals("Linux")) {
 			file = new File(System.getProperty("user.home"));
 		}else {
-			file = new File(System.getProperty("user.home") + "/desktop");
+			file = new File("C:\\Aldapena");
 		}
 
-		findFile(name, fi);
+		findFile(name, file);
 
 		return true;
 	}
