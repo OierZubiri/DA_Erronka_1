@@ -9,6 +9,8 @@ import java.nio.file.Paths;
 import java.nio.file.attribute.UserPrincipal;
 import java.nio.file.attribute.UserPrincipalLookupService;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class MetodoakPropietateak {
 
@@ -33,7 +35,7 @@ public class MetodoakPropietateak {
 				baimenak(sc);
 				break;
 			case 3:
-				jabea();
+				jabea(sc);
 				break;
 			case 4:
 				MetodoKokapena.fitxeroAukeratu(sc);
@@ -62,7 +64,6 @@ public class MetodoakPropietateak {
 			System.out.println("Fitzeroen baimenak aldatzeko:");
 			System.out.println("1-Idatzi");
 			System.out.println("2-Irakurri bakarrik");
-			System.out.println("3-Ejetutatu ez");
 			int aukera = sc.nextInt();
 
 			switch (aukera) {
@@ -70,38 +71,21 @@ public class MetodoakPropietateak {
 			case 1:
 				fic.setReadable(true);
 				fic.setWritable(true);
-				fic.setExecutable(true);
 				fic1.setReadable(true);
 				fic1.setWritable(true);
-				fic1.setExecutable(true);
 				fic2.setReadable(true);
 				fic2.setWritable(true);
-				fic2.setExecutable(true);
 				break;
 			case 2:
 				fic.setReadable(true);
 				fic.setWritable(false);
-				fic.setExecutable(true);
 				fic1.setReadable(true);
 				fic1.setWritable(false);
-				fic1.setExecutable(true);
 				fic2.setReadable(true);
 				fic2.setWritable(false);
-				fic2.setExecutable(true);
-				break;
-			case 3:
-				fic.setReadable(false);
-				fic.setWritable(false);
-				fic.setExecutable(false);
-				fic1.setReadable(false);
-				fic1.setWritable(false);
-				fic1.setExecutable(false);
-				fic2.setReadable(false);
-				fic2.setWritable(false);
-				fic2.setExecutable(false);
 				break;
 			default:
-				System.out.println("1-etik 3-ra sartu behar duzu");
+				System.out.println("1-etik 2-ra sartu behar duzu");
 				ondo = false;
 			}
 		} while (ondo == false);
@@ -126,27 +110,39 @@ public class MetodoakPropietateak {
 
 	// __________________________________________________________________________________________________________________//
 	
-	public static boolean jabea() throws IOException {
-
+	public static boolean jabea(Scanner sc) throws IOException {
+		boolean jabeona = false;
+		String zbk;
+		String jabea;
+		
 		System.out.println();
 		Path path = Paths.get("./datuak/Liburuak.txt");
 
 		System.out.println("-- Jabea zaharra --");
 		UserPrincipal owner = Files.getOwner(path);
 		System.out.println("Owner: " + owner);
-
-		System.out.println("-- lookup other user --");
+		
+		do {
+			Pattern p = Pattern.compile(Metodoak.MetodoakPatroiak.texto);
+			System.out.println("Sartu jabe berria:");
+			jabea=sc.nextLine();
+			Matcher m = p.matcher(jabea);
+			if(m.matches()) {
+				jabeona=true;
+			}
+		}while(jabeona==false);
+		
 		FileSystem fileSystem = path.getFileSystem();
 		UserPrincipalLookupService service = fileSystem.getUserPrincipalLookupService();
-		UserPrincipal userPrincipal = service.lookupPrincipalByName("asier");
+
+		UserPrincipal userPrincipal = service.lookupPrincipalByName(jabea);
 		System.out.println("Found UserPrincipal: " + userPrincipal);
 
-		// changing owner
 		Files.setOwner(path, userPrincipal);
 
 		System.out.println("-- Jabe berria --");
 		owner = Files.getOwner(path);
-		System.out.println("Owner: " + owner.getName());
+		System.out.println("Jabea: " + owner.getName());
 		
 		return true;
 	}

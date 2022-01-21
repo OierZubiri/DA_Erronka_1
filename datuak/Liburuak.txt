@@ -1,40 +1,16 @@
-------------------------------------------------------  
-Izenburua: joel  
-Argitaletxea: lukas  
-Orrialdeak: 12  
-Altuera: 12  
-Oharrak: 12  
-ISBN: 0-596-52068-9  
-Gaiak: 12  
-------------------------------------------------------  
-Izenburua: asier  
-Argitaletxea: lukas  
-Orrialdeak: 12  
-Altuera: 12  
-Oharrak: 12  
-ISBN: 0-596-52068-9  
-Gaiak: 12  
-------------------------------------------------------  
-Izenburua: joel  
-Argitaletxea: asyo  
-Orrialdeak: 12  
-Altuera: 12  
-Oharrak: 12  
-ISBN: 0-596-52068-9  
-Gaiak: 12  
-------------------------------------------------------  
-Izenburua: el senor de los anillos  
-Argitaletxea: edozor  
-Orrialdeak: 17  
-Altuera: 17  
-Oharrak: 17  
-ISBN: 0-596-52068-9  
-Gaiak: 17  
-------------------------------------------------------  
-Izenburua: juan  
-Argitaletxea: e  
-Orrialdeak: 12  
-Altuera: 12  
-Oharrak: 12  
-ISBN: 0-596-52068-9  
-Gaiak: 12  
+------------------------------------------------------
+Izenburua: asier
+Argitaletxea: oier
+Orrialdeak: 25
+Altuera: 12
+Oharrak: liburi polita
+ISBN: 0-596-52068-9
+Gaiak: 13
+------------------------------------------------------
+Izenburua: el ultimo hombre
+Argitaletxea: 24
+Orrialdeak: 56
+Altuera: 30
+Oharrak: fantasia liburua
+ISBN: 0-596-52068-9
+Gaiak: 12

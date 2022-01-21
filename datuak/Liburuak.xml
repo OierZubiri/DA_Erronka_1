@@ -1,3 +1,21 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><Liburuak>
-
-<Liburua><Izenburua>joel</Izenburua><Argitaletxea>lukas</Argitaletxea><Orrialdeak>12</Orrialdeak><Altuera>12</Altuera><Oharrak>12</Oharrak><ISBN>0-596-52068-9</ISBN><Gaiak>12</Gaiak></Liburua><Liburua><Izenburua>asier</Izenburua><Argitaletxea>lukas</Argitaletxea><Orrialdeak>12</Orrialdeak><Altuera>12</Altuera><Oharrak>12</Oharrak><ISBN>0-596-52068-9</ISBN><Gaiak>12</Gaiak></Liburua><Liburua><Izenburua>joel</Izenburua><Argitaletxea>asyo</Argitaletxea><Orrialdeak>12</Orrialdeak><Altuera>12</Altuera><Oharrak>12</Oharrak><ISBN>0-596-52068-9</ISBN><Gaiak>12</Gaiak></Liburua><Liburua><Izenburua>el senor de los anillos</Izenburua><Argitaletxea>edozor</Argitaletxea><Orrialdeak>17</Orrialdeak><Altuera>17</Altuera><Oharrak>17</Oharrak><ISBN>0-596-52068-9</ISBN><Gaiak>17</Gaiak></Liburua><Liburua><Izenburua>juan</Izenburua><Argitaletxea>e</Argitaletxea><Orrialdeak>12</Orrialdeak><Altuera>12</Altuera><Oharrak>12</Oharrak><ISBN>0-596-52068-9</ISBN><Gaiak>12</Gaiak></Liburua><Liburua><Izenburua>Empire Burlesque</Izenburua><Argitaletxea>Iturribide</Argitaletxea><Orrialdeak>156</Orrialdeak><Altuera>12</Altuera><Oharrak>Bi ohar ditu</Oharrak><ISBN>0-596-52068-9</ISBN><Gaiak>2</Gaiak></Liburua><Liburua><Izenburua>Empire Burlesque</Izenburua><Argitaletxea>Iturribide</Argitaletxea><Orrialdeak>156</Orrialdeak><Altuera>12</Altuera><Oharrak>Bi ohar ditu</Oharrak><ISBN>0-596-52068-9</ISBN><Gaiak>2</Gaiak></Liburua><Liburua><Izenburua>Empire Burlesque</Izenburua><Argitaletxea>Iturribide</Argitaletxea><Orrialdeak>156</Orrialdeak><Altuera>12</Altuera><Oharrak>Bi ohar ditu</Oharrak><ISBN>0-596-52068-9</ISBN><Gaiak>2</Gaiak></Liburua><Liburua><Izenburua>Empire Burlesque</Izenburua><Argitaletxea>Iturribide</Argitaletxea><Orrialdeak>156</Orrialdeak><Altuera>12</Altuera><Oharrak>Bi ohar ditu</Oharrak><ISBN>0-596-52068-9</ISBN><Gaiak>2</Gaiak></Liburua></Liburuak>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Liburuak>
+	<Liburua>
+		<Izenburua>asier</Izenburua>
+		<Argitaletxea>oier</Argitaletxea>
+		<Orrialdeak>25</Orrialdeak>
+		<Altuera>12</Altuera>
+		<Oharrak>liburi polita</Oharrak>
+		<ISBN>0-596-52068-9</ISBN>
+		<Gaiak>15</Gaiak>
+	</Liburua>
+	<Liburua>
+		<Izenburua>el ultimo hombre</Izenburua>
+		<Argitaletxea>24</Argitaletxea>
+		<Orrialdeak>56</Orrialdeak>
+		<Altuera>30</Altuera>
+		<Oharrak>fantasia liburua</Oharrak>
+		<ISBN>0-596-52068-9</ISBN>
+		<Gaiak>12</Gaiak>
+	</Liburua>
+</Liburuak>
